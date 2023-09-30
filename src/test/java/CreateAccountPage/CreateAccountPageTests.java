@@ -1,28 +1,11 @@
 package CreateAccountPage;
 
 import base.BaseTests;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
-import java.io.FileReader;
-import java.io.IOException;
-
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class CreateAccountPageTests extends BaseTests {
-
-
-
-
-
-
-
-
-
     @Test
     public void testCreateAccount(){
         var cap = homePage.clickCreateAcountPage();
@@ -32,7 +15,6 @@ public class CreateAccountPageTests extends BaseTests {
         String expectedPageSource ="https://magento.softwaretestingboard.com/customer/account/";
         String actualPageSource = cap.getCurrentURL();
         assertEquals(actualPageSource,expectedPageSource,"account not created");
-
     }
 
     @Test

@@ -4,62 +4,79 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class AddNewAddresses extends basePage{
-    public AddNewAddresses(WebDriver driver)  {this.driver=driver;}
-    private By firstname = new By.ById("firstname");
-    private By lastname = new By.ById("lastname");
-    private By company = new By.ById("company");
-    private By telephone = new By.ById("telephone");
-    private By street_1 = new By.ById("street_1");
-    private By street_2 = new By.ById("street_2");
-    private By street_3 = new By.ById("street_3");
-    private By city = new By.ById("city");
-    private By state = new By.ById("region");
-    private By statedropdown = new By.ById("region_id");
-    private By postalcode = new By.ById("zip");
-    private By countrydropdown = new By.ById("country");
-    private By saveaddress = new By.ByXPath("//*[@id=\"form-validate\"]/div/div[1]/button");
+public class AddNewAddresses extends basePage {
+    private final By firstname = new By.ById("firstname");
+    private final By lastname = new By.ById("lastname");
+    private final By company = new By.ById("company");
+    private final By telephone = new By.ById("telephone");
+    private final By street_1 = new By.ById("street_1");
+    private final By street_2 = new By.ById("street_2");
+    private final By street_3 = new By.ById("street_3");
+    private final By city = new By.ById("city");
+    private final By state = new By.ById("region");
+    private final By statedropdown = new By.ById("region_id");
+    private final By postalcode = new By.ById("zip");
+    private final By countrydropdown = new By.ById("country");
+    private final By saveaddress = new By.ByXPath("//*[@id=\"form-validate\"]/div/div[1]/button");
+    private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
 
-    private By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
+    public AddNewAddresses(WebDriver driver) {
+        this.driver = driver;
+    }
 
-    public void setContactInformation(String FirstName,String LastName,String Company,String PhoneNumber){
+    public void setContactInformation(String FirstName, String LastName, String Company, String PhoneNumber) {
         clear(firstname);
-        sendKeys(firstname,FirstName);
+        sendKeys(firstname, FirstName);
         clear(lastname);
-        sendKeys(lastname,LastName);
+        sendKeys(lastname, LastName);
         clear(company);
-        sendKeys(company,Company);
+        sendKeys(company, Company);
         clear(telephone);
-        sendKeys(telephone,PhoneNumber);
+        sendKeys(telephone, PhoneNumber);
     }
-    public void setStreetAddress(String Address1,String Address2,String Address3){
+
+    public void setStreetAddress(String Address1, String Address2, String Address3) {
         clear(street_1);
-        sendKeys(street_1,Address1);
+        sendKeys(street_1, Address1);
         clear(street_2);
-        sendKeys(street_2,Address2);
+        sendKeys(street_2, Address2);
         clear(street_3);
-        sendKeys(street_3,Address3);
+        sendKeys(street_3, Address3);
     }
-    public void setCity(String City){
+
+    public void setCity(String City) {
         clear(city);
-        sendKeys(city,City);}
-    public void setState_DROPDOWN(String State){
+        sendKeys(city, City);
+    }
+
+    public void setState_DROPDOWN(String State) {
         Select select = new Select(driver.findElement(statedropdown));
         select.selectByVisibleText(State);
     }
-    public void setState(String State){
-        clear(state);
-        sendKeys(state,State);
-    }
-    public void setPostalCode(String PostalCode){sendKeys(postalcode,PostalCode);}
 
-    public void setCountrydropdown(String Country){
+    public void setState(String State) {
+        clear(state);
+        sendKeys(state, State);
+
+
+
+
+    }
+
+    public void setPostalCode(String PostalCode) {
+        sendKeys(postalcode, PostalCode);
+    }
+
+    public void setCountrydropdown(String Country) {
         Select select = new Select(driver.findElement(countrydropdown));
         select.selectByVisibleText(Country);
     }
-    public void saveAddress(){click(saveaddress);}
 
-    public String getStatus(){
+    public void saveAddress() {
+        click(saveaddress);
+    }
+
+    public String getStatus() {
         return getText(status);
     }
 }
