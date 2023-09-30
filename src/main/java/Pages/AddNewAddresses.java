@@ -1,9 +1,17 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 
+import java.time.Duration;
+
+import static org.testng.Assert.assertEquals;
+
+@SuppressWarnings("ALL")
 public class AddNewAddresses extends basePage {
     private final By firstname = new By.ById("firstname");
     private final By lastname = new By.ById("lastname");
@@ -19,12 +27,17 @@ public class AddNewAddresses extends basePage {
     private final By countrydropdown = new By.ById("country");
     private final By saveaddress = new By.ByXPath("//*[@id=\"form-validate\"]/div/div[1]/button");
     private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
+    private final By addnewaddresses = new By.ByXPath("//span[normalize-space()='Add New Address']");
 
     public AddNewAddresses(WebDriver driver) {
         this.driver = driver;
     }
 
     public void setContactInformation(String FirstName, String LastName, String Company, String PhoneNumber) {
+        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.presenceOfElementLocated(firstname));
+
         clear(firstname);
         sendKeys(firstname, FirstName);
         clear(lastname);
@@ -59,8 +72,6 @@ public class AddNewAddresses extends basePage {
         sendKeys(state, State);
 
 
-
-
     }
 
     public void setPostalCode(String PostalCode) {
@@ -79,4 +90,21 @@ public class AddNewAddresses extends basePage {
     public String getStatus() {
         return getText(status);
     }
+
+    public void verifyAddressAdded(){
+        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.presenceOfElementLocated(status));
+
+
+        String expectedStatus = "https://magento.softwaretestingboard.com/customer/address/index/";
+        String actualStatus = getCurrentURL();
+        assertEquals(actualStatus,expectedStatus,"Address not saved");
+
+    }
+
+
+
+
 }
+

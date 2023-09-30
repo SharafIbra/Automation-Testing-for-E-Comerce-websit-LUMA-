@@ -1,8 +1,15 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+
+import java.time.Duration;
+
+import static org.testng.Assert.assertEquals;
 
 public class AddDefaultAddresses extends basePage {
 
@@ -21,6 +28,7 @@ public class AddDefaultAddresses extends basePage {
     private final By countrydropdown = new By.ById("country");
     private final By saveaddress = new By.ByXPath("//*[@id=\"form-validate\"]/div/div[1]/button");
     private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
+    private final By addnewaddresses = new By.ByXPath("//*[@id=\"maincontent\"]/div[2]/div[1]/div[6]/div[1]/button");
 
     public AddDefaultAddresses(WebDriver driver) {
         this.driver = driver;
@@ -67,8 +75,17 @@ public class AddDefaultAddresses extends basePage {
         click(saveaddress);
     }
 
-    public String getStatus() {
-        return getText(status);
+    public void verifyAddressAdded(){
+        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.presenceOfElementLocated(status));
+
+
+        String expectedStatus = "https://magento.softwaretestingboard.com/customer/address/index/";
+        String actualStatus = getCurrentURL();
+        assertEquals(actualStatus,expectedStatus,"Address not saved");
+
     }
+
 
 }

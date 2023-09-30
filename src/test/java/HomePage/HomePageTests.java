@@ -9,7 +9,7 @@ public class HomePageTests extends BaseTests {
 
     @Test
     void testCreateAcount(){
-        homePage.clickCreateAcountPage();
+        homePage.clickCreateAccountPage();
 
     }
     @Test

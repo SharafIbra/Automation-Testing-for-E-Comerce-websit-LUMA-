@@ -1,5 +1,6 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,11 +13,13 @@ public class HomePage extends basePage {
         this.driver = driver;
     }
 
-    public createAccountPage clickCreateAcountPage() {
+    @Step("Click Create account button in home page to create new user account")
+    public createAccountPage clickCreateAccountPage() {
         click(createacount);
         return new createAccountPage(driver);
     }
 
+    @Step("Click Sign In button in home to login ")
     public LoginPage clickLoginPage() {
         click(signin);
         return new LoginPage(driver);
@@ -32,8 +35,17 @@ public class HomePage extends basePage {
         return new EditAccountInformation(driver);
     }
 
+
     public AddItemsToShoppingCart clickAddItemsToShoppingCart() {
         return new AddItemsToShoppingCart(driver);
+    }
+
+    public SearchProduct clickSearchProduct() {
+        return new SearchProduct(driver);
+    }
+
+    public CheckoutCartItems clickCheckoutCartItems() {
+        return new CheckoutCartItems(driver);
     }
 
 

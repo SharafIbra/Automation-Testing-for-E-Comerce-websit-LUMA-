@@ -1,0 +1,43 @@
+git config --global user.name "sharaf"
+git config --global user.password "sharaf"
+git config --global user.email "sharafis1996@gmail.com"
+
+
+
+git init "myproject"
+ls ========
+ls myproject	
+
+git touch index.html		>>>>>>>>>>>>>>>		for creating new file
+git status 			>>>>>>>>>>>>>>>		get status
+git add index.html 		>>>>>>>>>>>>>>>		adding file to stage 	
+git commit -m"adding items"	>>>>>>>>>>>>>>>		commit 
+
+git log
+
+git checkout #commitcode	>>>>>>>>>>>>>>> 	this will back to commit and go in new banch	
+		
+git banch 			>>>>>>>>>>>>>>>		this will get all branches
+
+git checkout master		>>>>>>>>>>>>>>>		this for changing to branch master
+
+
+git merge branchname		>>>>>>>>>>>>>>>		for merging branch to master branch use this
+
+
+
+
+
+
+
+
+git remote -v
+git remote add origin https:#################repo link
+git push -u origin master
+
+
+
+git pull origin master
+
+
+

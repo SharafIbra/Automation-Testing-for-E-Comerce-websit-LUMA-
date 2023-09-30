@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static org.testng.Assert.assertEquals;
+
 public class ForgetPasswordPage extends basePage {
 
     private final By email = new By.ById("email_address");
@@ -23,6 +25,11 @@ public class ForgetPasswordPage extends basePage {
 
     public String getStatus() {
         return driver.findElement(status).getText();
+    }
+    public void verifyResetPassword() {
+        String expectedURL ="https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2luZGV4Lw%2C%2C/";
+        String actualURL = driver.getCurrentUrl();
+        assertEquals(actualURL,expectedURL);
     }
 
 

@@ -1,6 +1,7 @@
 package base;
 
 import Pages.HomePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -11,6 +12,7 @@ public class BaseTests  extends testData{
 
     protected HomePage homePage;
 
+    @Step("Open the Application")
     @BeforeMethod
         public void setUpChromeDriver() {
         driver = new ChromeDriver();
@@ -24,6 +26,7 @@ public class BaseTests  extends testData{
         homePage = new HomePage(driver);
     }
 
+    @Step("Close the Application")
     @AfterMethod
     public void tearDown() {driver.quit();}
 

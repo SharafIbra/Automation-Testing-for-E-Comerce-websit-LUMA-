@@ -21,6 +21,7 @@ public class EditAccountInformationTests extends BaseTests {
         change.setNewPassword(password);
         change.setConfirmNewPassword(confirm_password);
         change.save();
+        change.verifyPasswordChanged();
     }
 
 
@@ -38,10 +39,9 @@ public class EditAccountInformationTests extends BaseTests {
         change.setChangeEmail(email);
         change.setCurrentPassword(password);
         change.save();
+        change.verifyEmailChanged();
 
-        String expectedStatus = "You saved the account information.";
-        String actualStatus = change.getStatus();
-        assertEquals(actualStatus,expectedStatus,"Password not changed");
+
 
     }
 
@@ -61,9 +61,8 @@ public class EditAccountInformationTests extends BaseTests {
         Daddress.setState(state);
         Daddress.setPostalCode(postalcode);
         Daddress.saveAddress();
-        String expectedStatus = "You saved the address.";
-        String actualStatus = Daddress.getStatus();
-        assertEquals(actualStatus,expectedStatus,"Address not saved");
+        Daddress.verifyAddressAdded();
+
     }
 
 
@@ -84,9 +83,7 @@ public class EditAccountInformationTests extends BaseTests {
         Naddress.setState_DROPDOWN("Alaska");
         Naddress.setPostalCode(postalcode);
         Naddress.saveAddress();
-        String expectedStatus = "You saved the address.";
-        String actualStatus = Naddress.getStatus();
-        assertEquals(actualStatus,expectedStatus,"Address not saved");
+        Naddress.verifyAddressAdded();
 
     }
 

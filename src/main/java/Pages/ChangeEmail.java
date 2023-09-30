@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static org.testng.Assert.assertEquals;
+
 public class ChangeEmail extends basePage {
     private final By changeemail = new By.ById("change-email");
     private final By email = new By.ById("email");
@@ -30,5 +32,12 @@ public class ChangeEmail extends basePage {
 
     public void save() {
         click(savebutton);
+    }
+
+
+    public void verifyEmailChanged(){
+        String expectedStatus = "https://magento.softwaretestingboard.com/customer/account/login/";
+        String actualStatus = getCurrentURL();
+        assertEquals(actualStatus,expectedStatus,"Password not changed");
     }
 }

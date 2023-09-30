@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static org.testng.Assert.assertEquals;
+
 public class ChangePassword extends basePage {
 
     private final By currentpassword = new By.ById("current-password");
@@ -28,5 +30,11 @@ public class ChangePassword extends basePage {
 
     public void save() {
         click(savebutton);
+    }
+
+    public void verifyPasswordChanged(){
+        String expectedStatus = "https://magento.softwaretestingboard.com/customer/account/login/";
+        String actualStatus = getCurrentURL();
+        assertEquals(actualStatus,expectedStatus,"Password not changed");
     }
 }

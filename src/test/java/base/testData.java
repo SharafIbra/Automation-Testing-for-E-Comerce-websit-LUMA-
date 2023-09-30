@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class testData {
 
-    private int userNumber = 1;
+    private int userNumber =2;
     private int addressNumber = 1;
 
 
@@ -32,6 +32,11 @@ public class testData {
     protected String state = getState();
     protected String postalcode = getPostalcode();
     protected String country = getCountry();
+    protected String WomenProduct = getWomenProduct();
+    protected String MenProduct = getMenProduct();
+
+
+
 
     {
         JSONParser jsonParser = new JSONParser();
@@ -63,6 +68,9 @@ public class testData {
         String state = (String) jasonO_AllData.get("state");
         String postalcode = (String) jasonO_AllData.get("postalcode");
         String country = (String) jasonO_AllData.get("country");
+        String WomenProduct = (String) jasonO_AllData.get("WomenProduct");
+        String MenProduct = (String) jasonO_AllData.get("MenProduct");
+
 
         JSONArray array_address = (JSONArray) jasonO_AllData.get("Addresses");
         JSONObject jsonObject_address = (JSONObject) array_address.get(addressNumber-1);
@@ -87,6 +95,8 @@ public class testData {
         setState(state);
         setPostalcode(postalcode);
         setCountry(country);
+        setWomenProduct(WomenProduct);
+        setMenProduct(MenProduct);
     }
 
     private void setFirstname(String firstname) {
@@ -137,12 +147,11 @@ public class testData {
     private void setCountry(String country) {
         this.country = country;
     }
+    private void setWomenProduct(String WomenProduct) {this.WomenProduct =WomenProduct;}
 
-
-
-
-
-
+    private void setMenProduct(String menProduct) {
+        MenProduct = menProduct;
+    }
 
 
 
@@ -192,4 +201,11 @@ public class testData {
         return country;
     }
 
+    public String getWomenProduct() {
+        return WomenProduct;
+    }
+
+    public String getMenProduct() {
+        return MenProduct;
+    }
 }
