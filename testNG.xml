@@ -1,0 +1,14 @@
+<?xml-model href=""?>
+<suite name="LUMA Regression Suite">
+	<test name="Change Password" preserve-order="true">
+		<classes>
+			<class name="EditAccountInformation.EditAccountInformationTests" />
+			<class name="LoginPage.LoginPageTests" />
+				<methodes>
+					<include name="testLogin"/>
+				</methodes>
+
+		</classes>
+	</test>
+</suite>
+

@@ -1,0 +1,55 @@
+{
+  "SignUp Information":
+  [
+    {
+      "firstname":"Sharaf",
+      "lastname":"Ibrahim",
+      "email":"bigahi4337011@ipniel.com",
+      "password":"P@ssw0rd",
+      "confirm_password":"P@ssw0rd"
+    },
+    {
+      "firstname":"Ahmed",
+      "lastname":"Saad",
+      "email":"bigahi43371@ipniel.com",
+      "password":"P@ssw0rd",
+      "confirm_password":"P@ssw0rd"
+    },
+    {
+      "firstname":"Samy",
+      "lastname":"Mohamed",
+      "email":"bigahi433711@ipniel.com",
+      "password":"P@ssw0rd",
+      "confirm_password":"P@ssw0rd"
+    },
+    {
+      "firstname":"Abdallah",
+      "lastname":"Omar",
+      "email":"bigahi4337111@ipniel.com",
+      "password":"P@ssw0rd",
+      "confirm_password":"P@ssw0rd"
+    }
+  ],
+
+   "Addresses":[
+    {
+      "address1":"Abbas Elaakad",
+      "address2":"Naser City",
+      "address3":"Shobra Elkhema"
+    },
+    {
+      "address1":"El Agamy",
+      "address2":"El Mamoura",
+      "address3":"New Beach"
+    }
+
+  ],
+  "Company":"EGY LAP",
+  "phone_number":"01202587511",
+  "country":"Egypt",
+  "city":"New Capital",
+  "state": "new state",
+  "postalcode":"33366"
+
+
+}
