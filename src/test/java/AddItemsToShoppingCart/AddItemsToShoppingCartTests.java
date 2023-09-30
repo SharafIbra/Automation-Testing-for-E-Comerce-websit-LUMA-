@@ -29,9 +29,9 @@ public class AddItemsToShoppingCartTests extends BaseTests {
 
         assertEquals(actualStatus,expectedStatus,"Item not added to shopping cart.");
 
-
-
     }
+
+
 
 
 

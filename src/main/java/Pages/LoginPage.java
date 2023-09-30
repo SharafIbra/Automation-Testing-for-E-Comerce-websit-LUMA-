@@ -1,5 +1,6 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,15 +15,17 @@ public class LoginPage extends basePage {
         this.driver = driver;
     }
 
+    @Step("Login with email: {0} & password: {1}")
     public void setLoginCredentials(String Email, String Password) {
         sendKeys(email, Email);
         sendKeys(password, Password);
     }
 
+    @Step("Click sign in ")
     public void signIn() {
         click(signin);
     }
-
+    @Step("Get url of page")
     public String getURL() {
         return driver.getCurrentUrl();
     }
