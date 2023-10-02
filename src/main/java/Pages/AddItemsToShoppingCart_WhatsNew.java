@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
 
+@SuppressWarnings("ALL")
 public class AddItemsToShoppingCart_WhatsNew extends basePage {
 
     private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
