@@ -35,9 +35,9 @@ public class ChangeEmail extends basePage {
     }
 
 
-    public void verifyEmailChanged(){
+    public void verifyEmailChanged() {
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/account/login/";
         String actualStatus = getCurrentURL();
-        assertEquals(actualStatus,expectedStatus,"Password not changed");
+        assertEquals(actualStatus, expectedStatus, "Password not changed");
     }
 }

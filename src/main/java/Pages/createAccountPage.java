@@ -6,7 +6,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -36,21 +35,24 @@ public class createAccountPage extends basePage {
         sendKeys(firstname, firstName);
         sendKeys(lastname, lastName);
     }
+
     @Step("Enter Account Information Email: {0} & Password: {1} & Confirm Password: {2}")
     public void setSignInInformation(String Email, String Password, String confirmPassword) {
         sendKeys(email, Email);
         sendKeys(password, Password);
         sendKeys(confirm_password, confirmPassword);
     }
+
     @Step("Click create account")
     public void create_account() {
         click(create_account_button);
     }
+
     @Step("Verify account is created successfully")
-    public void verifyPageURL(){
-        String expectedPageSource ="https://magento.softwaretestingboard.com/customer/account/";
+    public void verifyPageURL() {
+        String expectedPageSource = "https://magento.softwaretestingboard.com/customer/account/";
         String actualPageSource = getCurrentURL();
-        assertEquals(actualPageSource,expectedPageSource,"account not created");
+        assertEquals(actualPageSource, expectedPageSource, "account not created");
     }
 
     /*@Step("Reset password and link of email: {0}")
@@ -65,12 +67,12 @@ public class createAccountPage extends basePage {
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(clickherebtn));
 
-        String expectedStatus ="There is already an account with this email address";
+        String expectedStatus = "There is already an account with this email address";
         wait.until(ExpectedConditions.presenceOfElementLocated(status));
 
 
         String actualStatus = driver.findElement(status).getText();
         System.out.println(actualStatus);
-        assertTrue(actualStatus.contains(expectedStatus),"account not created");
+        assertTrue(actualStatus.contains(expectedStatus), "account not created");
     }
 }

@@ -3,18 +3,16 @@ package EditAccountInformation;
 import base.BaseTests;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
-
 public class EditAccountInformationTests extends BaseTests {
 
 
-    @Test   (priority = 4)
-    void testChangePassword(){
-        var log =homePage.clickLoginPage();
-        log.setLoginCredentials(email,password);
+    @Test(priority = 4)
+    void testChangePassword() {
+        var log = homePage.clickLoginPage();
+        log.setLoginCredentials(email, password);
         log.signIn();
 
-        var edit =homePage.clickEditAccountPage();
+        var edit = homePage.clickEditAccountPage();
         var change = edit.clickChangePassword();
         change.setCurrentPassword(password);
         //will work with the same password for no conflict
@@ -25,15 +23,13 @@ public class EditAccountInformationTests extends BaseTests {
     }
 
 
-
-
-    @Test   (priority = 3)
-    void testChangeEmail(){
-        var log =homePage.clickLoginPage();
-        log.setLoginCredentials(email,password);
+    @Test(priority = 3)
+    void testChangeEmail() {
+        var log = homePage.clickLoginPage();
+        log.setLoginCredentials(email, password);
         log.signIn();
 
-        var edit =homePage.clickEditAccountPage();
+        var edit = homePage.clickEditAccountPage();
 
         var change = edit.clickChangeEmail();
         change.setChangeEmail(email);
@@ -42,20 +38,19 @@ public class EditAccountInformationTests extends BaseTests {
         change.verifyEmailChanged();
 
 
-
     }
 
-    @Test (priority = 1)
-    void testAddNewAddress_DefaultAddress_FirstTime(){
-        var log =homePage.clickLoginPage();
-        log.setLoginCredentials(email,password);
+    @Test(priority = 1)
+    void testAddNewAddress_DefaultAddress_FirstTime() {
+        var log = homePage.clickLoginPage();
+        log.setLoginCredentials(email, password);
         log.signIn();
 
-        var edit =homePage.clickEditAccountPage();
+        var edit = homePage.clickEditAccountPage();
 
         var Daddress = edit.clickAddDefaultAddresses();
-        Daddress.setContactInformation(firstname,lastname,company,phone_number);
-        Daddress.setStreetAddress(address1,address2,address3);
+        Daddress.setContactInformation(firstname, lastname, company, phone_number);
+        Daddress.setStreetAddress(address1, address2, address3);
         Daddress.setCity(city);
         Daddress.setCountrydropdown(country);
         Daddress.setState(state);
@@ -66,18 +61,17 @@ public class EditAccountInformationTests extends BaseTests {
     }
 
 
-
-    @Test   (priority = 2)
-    void testAddNewAddress_IfCountryUSA(){
-        var log =homePage.clickLoginPage();
-        log.setLoginCredentials(email,password);
+    @Test(priority = 2)
+    void testAddNewAddress_IfCountryUSA() {
+        var log = homePage.clickLoginPage();
+        log.setLoginCredentials(email, password);
         log.signIn();
 
-        var edit =homePage.clickEditAccountPage();
+        var edit = homePage.clickEditAccountPage();
 
         var Naddress = edit.clickAddNewAddresses();
-        Naddress.setContactInformation(firstname,lastname,company,phone_number);
-        Naddress.setStreetAddress(address1,address2,address3);
+        Naddress.setContactInformation(firstname, lastname, company, phone_number);
+        Naddress.setStreetAddress(address1, address2, address3);
         Naddress.setCity(city);
         Naddress.setCountrydropdown("United States");
         Naddress.setState_DROPDOWN("Alaska");
@@ -86,9 +80,6 @@ public class EditAccountInformationTests extends BaseTests {
         Naddress.verifyAddressAdded();
 
     }
-
-
-
 
 
 }

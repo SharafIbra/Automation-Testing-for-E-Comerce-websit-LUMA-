@@ -13,13 +13,14 @@ public class AddItemsToShoppingCart_NavigationBar extends basePage {
     private final By quantity = new By.ById("qty");
     private final By addtocartbutton_f = new By.ById("product-addtocart-button");
     private final By nameofproduct = new By.ByXPath("//*[@id=\"maincontent\"]/div[2]/div/div[1]/div[1]/h1");
+
     public AddItemsToShoppingCart_NavigationBar(WebDriver driver) {
         this.driver = driver;
     }
 
     public void addMultiItem_Men_Jackets(String productName) {
         //a[normalize-space()='Circe Hooded Ice Fleece']
-        String xpath_addtocartbutton = "//a[normalize-space()='"+productName+"']";
+        String xpath_addtocartbutton = "//a[normalize-space()='" + productName + "']";
         By addtocartbutton = new By.ByXPath(xpath_addtocartbutton);
 
 

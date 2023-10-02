@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class basePage {
+
     WebDriver driver;
 
     protected void sendKeys(By byObject, String data) {

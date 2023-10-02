@@ -6,14 +6,14 @@ import org.testng.annotations.Test;
 public class HomePageTests extends BaseTests {
 
 
-
     @Test
-    void testCreateAcount(){
+    void testCreateAcount() {
         homePage.clickCreateAccountPage();
 
     }
+
     @Test
-    void testSignIn(){
+    void testSignIn() {
         homePage.clickLoginPage();
     }
 }

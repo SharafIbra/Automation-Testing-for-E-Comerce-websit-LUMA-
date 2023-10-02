@@ -7,11 +7,11 @@ import static org.testng.Assert.assertTrue;
 
 public class SearchProductTests extends BaseTests {
     @Test(description = "")
-    void testSearchProduct(){
+    void testSearchProduct() {
         var searchproduct = homePage.clickSearchProduct();
-        String product ="shirts";
+        String product = "shirts";
         searchproduct.enterProductName(product);
         String actualstatus = searchproduct.getStatus();
-        assertTrue(actualstatus.contains(product),"test False");
+        assertTrue(actualstatus.contains(product), "test False");
     }
 }

@@ -12,6 +12,7 @@ public class SearchProduct extends basePage {
         this.driver = driver;
     }
 
+
     public void enterProductName(String productName) {
         /*FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);

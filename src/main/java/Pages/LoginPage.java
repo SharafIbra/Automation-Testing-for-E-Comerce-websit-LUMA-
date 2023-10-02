@@ -2,13 +2,7 @@ package Pages;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-
-import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
 
@@ -35,16 +29,16 @@ public class LoginPage extends basePage {
     }
 
 
-    public void verifySignINIs_Ok(){
-        String expectedURL ="https://magento.softwaretestingboard.com/";
+    public void verifySignINIs_Ok() {
+        String expectedURL = "https://magento.softwaretestingboard.com/";
         String actualURL = driver.getCurrentUrl();
-        assertEquals(actualURL,expectedURL);
+        assertEquals(actualURL, expectedURL);
     }
 
     public void VerifySignINIs_incorrect() {
-        String expectedURL ="https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/";
+        String expectedURL = "https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/";
         String actualURL = driver.getCurrentUrl();
-        assertEquals(actualURL,expectedURL);
+        assertEquals(actualURL, expectedURL);
     }
 
 

@@ -32,9 +32,9 @@ public class ChangePassword extends basePage {
         click(savebutton);
     }
 
-    public void verifyPasswordChanged(){
+    public void verifyPasswordChanged() {
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/account/login/";
         String actualStatus = getCurrentURL();
-        assertEquals(actualStatus,expectedStatus,"Password not changed");
+        assertEquals(actualStatus, expectedStatus, "Password not changed");
     }
 }

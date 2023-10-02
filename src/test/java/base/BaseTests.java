@@ -7,20 +7,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseTests  extends testData{
-    WebDriver driver;
-
+public class BaseTests extends testData {
     protected HomePage homePage;
+    WebDriver driver;
 
     @Step("Open the Application")
     @BeforeMethod
-        public void setUpChromeDriver() {
+    public void setUpChromeDriver() {
         driver = new ChromeDriver();
         goHome();
     }
 
 
-    public void goHome(){
+    public void goHome() {
         driver.get("https://magento.softwaretestingboard.com/");
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
@@ -28,7 +27,9 @@ public class BaseTests  extends testData{
 
     @Step("Close the Application")
     @AfterMethod
-    public void tearDown() {driver.quit();}
+    public void tearDown() {
+        driver.quit();
+    }
 
 
 }

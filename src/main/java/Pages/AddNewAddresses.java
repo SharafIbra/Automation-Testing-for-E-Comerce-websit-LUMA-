@@ -91,7 +91,7 @@ public class AddNewAddresses extends basePage {
         return getText(status);
     }
 
-    public void verifyAddressAdded(){
+    public void verifyAddressAdded() {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(status));
@@ -99,11 +99,9 @@ public class AddNewAddresses extends basePage {
 
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/address/index/";
         String actualStatus = getCurrentURL();
-        assertEquals(actualStatus,expectedStatus,"Address not saved");
+        assertEquals(actualStatus, expectedStatus, "Address not saved");
 
     }
-
-
 
 
 }

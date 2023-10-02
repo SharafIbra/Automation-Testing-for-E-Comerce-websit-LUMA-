@@ -22,7 +22,7 @@ public class AddItemsToShoppingCart_WhatsNew extends basePage {
 
     public void addMultiItem_Women_HoodiesSweatshirts(String productName) {
         //a[normalize-space()='Circe Hooded Ice Fleece']
-        String xpath_addtocartbutton = "//a[normalize-space()='"+productName+"']";
+        String xpath_addtocartbutton = "//a[normalize-space()='" + productName + "']";
         By addtocartbutton = new By.ByXPath(xpath_addtocartbutton);
 
 
@@ -33,7 +33,7 @@ public class AddItemsToShoppingCart_WhatsNew extends basePage {
 
         click(addtocartbutton);
 
-        }
+    }
 
     /**
      * size docs

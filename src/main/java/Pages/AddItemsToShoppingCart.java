@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
 
+@SuppressWarnings("ALL")
 public class AddItemsToShoppingCart extends basePage {
     private final By whatisnewbutton = new By.ByCssSelector("#ui-id-2 > li.level0.nav-1.category-item.first.level-top.ui-menu-item");
 

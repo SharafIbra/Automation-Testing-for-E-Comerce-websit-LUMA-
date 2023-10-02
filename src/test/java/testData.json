@@ -1,57 +1,52 @@
 {
-  "SignUp Information":
-  [
+  "SignUp Information": [
     {
-      "firstname":"Sharaf",
-      "lastname":"Ibrahim",
-      "email":"bigah1ix4331a01@ipniel.com",
-      "password":"P@ssw0rd",
-      "confirm_password":"P@ssw0rd"
+      "firstname": "Sharaf",
+      "lastname": "Ibrahim",
+      "email": "bigah1ix4331a01@ipniel.com",
+      "password": "P@ssw0rd",
+      "confirm_password": "P@ssw0rd"
     },
     {
-      "firstname":"Ahmed",
-      "lastname":"Saad",
-      "email":"biga1hi4x3a71800@ipniel.com",
-      "password":"P@ssw0rd",
-      "confirm_password":"P@ssw0rd"
+      "firstname": "Ahmed",
+      "lastname": "Saad",
+      "email": "biga1hi4x3a71800@ipniel.com",
+      "password": "P@ssw0rd",
+      "confirm_password": "P@ssw0rd"
     },
     {
-      "firstname":"Samy",
-      "lastname":"Mohamed",
-      "email":"bigahix41a313781100@ipniel.com",
-      "password":"P@ssw0rd",
-      "confirm_password":"P@ssw0rd"
+      "firstname": "Samy",
+      "lastname": "Mohamed",
+      "email": "bigahix41a313781100@ipniel.com",
+      "password": "P@ssw0rd",
+      "confirm_password": "P@ssw0rd"
     },
     {
-      "firstname":"Abdallah",
-      "lastname":"Omar",
-      "email":"bigahi14x3a337181100@ipniel.com",
-      "password":"P@ssw0rd",
-      "confirm_password":"P@ssw0rd"
+      "firstname": "Abdallah",
+      "lastname": "Omar",
+      "email": "bigahi14x3a337181100@ipniel.com",
+      "password": "P@ssw0rd",
+      "confirm_password": "P@ssw0rd"
     }
   ],
-
-   "Addresses":[
+  "Addresses": [
     {
-      "address1":"Abbas Elaakad",
-      "address2":"Naser City",
-      "address3":"Shobra Elkhema"
+      "address1": "Abbas Elaakad",
+      "address2": "Naser City",
+      "address3": "Shobra Elkhema"
     },
     {
-      "address1":"El Agamy",
-      "address2":"El Mamoura",
-      "address3":"New Beach"
+      "address1": "El Agamy",
+      "address2": "El Mamoura",
+      "address3": "New Beach"
     }
-
   ],
-  "Company":"EGY LAP",
-  "phone_number":"01202587511",
-  "country":"Egypt",
-  "city":"New Capital",
+  "Company": "EGY LAP",
+  "phone_number": "01202587511",
+  "country": "Egypt",
+  "city": "New Capital",
   "state": "new state",
-  "postalcode":"33366",
+  "postalcode": "33366",
   "WomenProduct": "Circe Hooded Ice Fleece",
   "MenProduct": "Montana Wind Jacket"
-
-
 }
