@@ -1,0 +1,15 @@
+<?xml-model href=""?>
+<suite name="LUMA Test Suite" >
+	<test name="Parallel tests" parallel = "classes">
+		<classes>
+			<class name="CreateAccountPage.CreateAccountPageTests" />
+			<class name="LoginPage.LoginPageTests" />
+			<class name="AddItemsToShoppingCart.AddItemsToShoppingCartTests" />
+			<class name="EditAccountInformation.EditAccountInformationTests" />
+			<class name="ForgetPassword.ForgetPasswordPageTests" />
+			<class name="SearchProduct.SearchProductTests" />
+		</classes>
+	</test>
+
+</suite>
+<!--                                                                    -->
