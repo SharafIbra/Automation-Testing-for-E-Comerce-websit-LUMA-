@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class testData {
 
-    private final int userNumber = 2;
+    private final int userNumber = 1;
     private final int addressNumber = 1;
 
     {
@@ -18,7 +18,7 @@ public class testData {
         Object object = null;
 
         try {
-            object = jsonParser.parse(new FileReader("src/test/java/testData.json"));
+            object = jsonParser.parse(new FileReader("D:\\St\\Projects\\LUMA\\src\\main\\resources\\testData.json"));
         } catch (IOException | ParseException ex) {
             throw new RuntimeException(ex);
         }

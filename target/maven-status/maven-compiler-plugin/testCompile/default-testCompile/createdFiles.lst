@@ -1,0 +1,10 @@
+CheckoutCartItems\CheckoutCartItemsTests.class
+AddItemsToShoppingCart\AddItemsToShoppingCartOptionsTests.class
+SearchProduct\SearchProductTests.class
+CreateAccountPage\CreateAccountPageTests.class
+HomePage\P01HomePageTests.class
+base\BaseTests.class
+LoginPage\LoginPageTests.class
+EditAccountInformation\EditAccountInformationTests.class
+base\testData.class
+ForgetPassword\ForgetPasswordPageTests.class

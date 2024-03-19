@@ -1,0 +1,5 @@
+# Created at 2024-02-27T02:42:51.272
+Boot Manifest-JAR contains absolute paths in classpath 'D:\St\Projects\LUMA\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

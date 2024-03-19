@@ -1,0 +1,14 @@
+Pages\basePage.class
+Pages\AddItemsToShoppingCart_Functions.class
+Pages\ForgetPasswordPage.class
+Pages\AddNewAddresses.class
+Pages\SearchProduct.class
+Pages\ChangeEmail.class
+Pages\EditAccountInformation.class
+Pages\AddDefaultAddresses.class
+Pages\P01_HomePage.class
+Pages\AddItemsToShoppingCart_Options.class
+Pages\CheckoutCartItems.class
+Pages\LoginPage.class
+Pages\ChangePassword.class
+Pages\createAccountPage.class

@@ -1,0 +1,10 @@
+<?xml-model href=""?>
+<suite name="LUMA Test Suite" >
+	<parameter name="browser" value="Chrome" />
+	<test name="Add Items To Shopping Cart" preserve-order="true">
+		<classes>
+			<class name="test_7_AddItemsToShoppingCart.AddItemsToShoppingCartOptionsTests" />
+		</classes>
+	</test>
+</suite>
+
