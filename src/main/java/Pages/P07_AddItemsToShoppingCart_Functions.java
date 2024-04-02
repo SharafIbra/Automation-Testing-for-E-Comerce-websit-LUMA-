@@ -10,6 +10,7 @@ import java.time.Duration;
 
 @SuppressWarnings("ALL")
 public class P07_AddItemsToShoppingCart_Functions extends basePage {
+    WebDriver driver;
 
     private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
     private final By quantity = new By.ById("qty");
@@ -31,7 +32,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(addtocartbutton)));
 
 
-        click(addtocartbutton);
+        click(driver,addtocartbutton);
 
     }
     public void NavigationBar_addMultiItem_Men_Jackets(String productName) {
@@ -45,7 +46,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(addtocartbutton)));
 
 
-        click(addtocartbutton);
+        click(driver,addtocartbutton);
 
     }
 
@@ -65,7 +66,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(size));
-        click(size);
+        click(driver,size);
 
     }
 
@@ -89,19 +90,19 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
 
         By colour = new By.ById(xpath_colour);
 
-        click(colour);
+        click(driver,colour);
     }
 
     public void selectQuantity(String Quantity) {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(quantity));
-        clear(quantity);
-        sendKeys(quantity, Quantity);
+        clear(driver,quantity);
+        sendKeys(driver,quantity, Quantity);
     }
 
     public void submitProductToCart() {
-        click(addtocartbutton_f);
+        click(driver,addtocartbutton_f);
         /*return driver.findElement(nameofproduct).getText();*/
     }
 
@@ -110,7 +111,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(status));
 
-        return getText(status);
+        return getText(driver,status);
     }
 
 

@@ -11,6 +11,7 @@ import java.time.Duration;
 
 @SuppressWarnings("ALL")
 public class P07_AddItemsToShoppingCart_Options extends basePage {
+    WebDriver driver;
     private final By whatisnewbutton = new By.ByCssSelector("#ui-id-2 > li.level0.nav-1.category-item.first.level-top.ui-menu-item");
 
     private final By hoodiessweatshirts_women___whatsnew = new By.ByXPath("//*[@id=\"maincontent\"]/div[4]/div[2]/div/div/ul[1]/li[1]/a");
@@ -31,9 +32,9 @@ public class P07_AddItemsToShoppingCart_Options extends basePage {
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(whatisnewbutton));
 
-        click(whatisnewbutton);
+        click(driver,whatisnewbutton);
 
-        click(hoodiessweatshirts_women___whatsnew);
+        click(driver,hoodiessweatshirts_women___whatsnew);
         return new P07_AddItemsToShoppingCart_Functions(driver);
     }
 
@@ -53,7 +54,7 @@ public class P07_AddItemsToShoppingCart_Options extends basePage {
         wait.until(ExpectedConditions.presenceOfElementLocated(mentopsjackets));
         actions.moveToElement(driver.findElement(mentopsjackets)).perform();
 
-        click(mentopsjackets);
+        click(driver,mentopsjackets);
 
         return new P07_AddItemsToShoppingCart_Functions(driver);
     }

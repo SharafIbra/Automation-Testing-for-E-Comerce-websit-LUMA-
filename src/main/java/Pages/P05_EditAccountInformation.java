@@ -10,6 +10,7 @@ import java.time.Duration;
 
 @SuppressWarnings("ALL")
 public class P05_EditAccountInformation extends basePage {
+    WebDriver driver;
     private final By myacountdropdownbutton = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button");
     private final By myacount = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[1]");
     private final By changepassword = new By.ByXPath("//a[@class='action change-password']");
@@ -26,11 +27,11 @@ public class P05_EditAccountInformation extends basePage {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(myacountdropdownbutton));
-        click(myacountdropdownbutton);
+        click(driver,myacountdropdownbutton);
 
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(myacount)));
-        click(myacount);
-        click(changepassword);
+        click(driver,myacount);
+        click(driver,changepassword);
         return new P05_ChangePassword(driver);
     }
 
@@ -38,11 +39,11 @@ public class P05_EditAccountInformation extends basePage {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(myacountdropdownbutton));
-        click(myacountdropdownbutton);
+        click(driver,myacountdropdownbutton);
 
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(myacount)));
-        click(myacount);
-        click(edit);
+        click(driver,myacount);
+        click(driver,edit);
         return new P05_ChangeEmail(driver);
     }
 
@@ -50,12 +51,12 @@ public class P05_EditAccountInformation extends basePage {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(myacountdropdownbutton));
-        click(myacountdropdownbutton);
+        click(driver,myacountdropdownbutton);
 
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(myacount)));
-        click(myacount);
+        click(driver,myacount);
 
-        click(manageaddresses);
+        click(driver,manageaddresses);
         return new P05_AddDefaultAddresses(driver);
     }
 
@@ -63,14 +64,14 @@ public class P05_EditAccountInformation extends basePage {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(myacountdropdownbutton));
-        click(myacountdropdownbutton);
+        click(driver,myacountdropdownbutton);
 
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(myacount)));
-        click(myacount);
+        click(driver,myacount);
 
-        click(manageaddresses);
+        click(driver,manageaddresses);
 
-        click(addnewaddresses);
+        click(driver,addnewaddresses);
         return new P05_AddNewAddresses(driver);
     }
 

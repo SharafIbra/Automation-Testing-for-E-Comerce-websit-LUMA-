@@ -1,0 +1,52 @@
+{
+  "SignUp Information": [
+    {
+      "firstname": "Sharaf",
+      "lastname": "Ibrahim",
+      "email": "bigahz1ix4331a01xzzx@ipniel.com",
+      "password": "P@ssw0rd",
+      "confirm_password": "P@ssw0rd"
+    },
+    {
+      "firstname": "Ahmed",
+      "lastname": "Saad",
+      "email": "bigaz1hi4x3a71800xzzzx@ipniel.com",
+      "password": "P@ssw0rd",
+      "confirm_password": "P@ssw0rd"
+    },
+    {
+      "firstname": "Samy",
+      "lastname": "Mohamed",
+      "email": "bigahizx41a313781100xzzzzx@ipniel.com",
+      "password": "P@ssw0rd",
+      "confirm_password": "P@ssw0rd"
+    },
+    {
+      "firstname": "Abdallah",
+      "lastname": "Omar",
+      "email": "bigahiz14x3a337181100xxzzx@ipniel.com",
+      "password": "P@ssw0rd",
+      "confirm_password": "P@ssw0rd"
+    }
+  ],
+  "Addresses": [
+    {
+      "address1": "Abbas Elaakad",
+      "address2": "Naser City",
+      "address3": "Shobra Elkhema"
+    },
+    {
+      "address1": "El Agamy",
+      "address2": "El Mamoura",
+      "address3": "New Beach"
+    }
+  ],
+  "Company": "EGY LAP",
+  "phone_number": "01202587511",
+  "country": "Egypt",
+  "city": "New Capital",
+  "state": "new state",
+  "postalcode": "33366",
+  "WomenProduct": "Circe Hooded Ice Fleece",
+  "MenProduct": "Montana Wind Jacket"
+}

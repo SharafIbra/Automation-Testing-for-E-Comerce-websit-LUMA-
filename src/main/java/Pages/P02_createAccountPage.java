@@ -14,6 +14,7 @@ import static org.testng.Assert.assertTrue;
 
 
 public class P02_createAccountPage extends basePage {
+    WebDriver driver;
     private final By firstname = new By.ById("firstname");
     private final By lastname = new By.ById("lastname");
     private final By email = new By.ById("email_address");
@@ -32,26 +33,26 @@ public class P02_createAccountPage extends basePage {
 
     @Step("Enter Personal Information First Name: {0} & Last Name: {1}")
     public void setPersonalInformation(String firstName, String lastName) {
-        sendKeys(firstname, firstName);
-        sendKeys(lastname, lastName);
+        sendKeys(driver,firstname, firstName);
+        sendKeys(driver,lastname, lastName);
     }
 
     @Step("Enter Account Information Email: {0} & Password: {1} & Confirm Password: {2}")
     public void setSignInInformation(String Email, String Password, String confirmPassword) {
-        sendKeys(email, Email);
-        sendKeys(password, Password);
-        sendKeys(confirm_password, confirmPassword);
+        sendKeys(driver,email, Email);
+        sendKeys(driver,password, Password);
+        sendKeys(driver,confirm_password, confirmPassword);
     }
 
     @Step("Click create account")
     public void create_account() {
-        click(create_account_button);
+        click(driver,create_account_button);
     }
 
     @Step("Verify account is created successfully")
     public void verifyPageURL() {
         String expectedPageSource = "https://magento.softwaretestingboard.com/customer/account/";
-        String actualPageSource = getCurrentURL();
+        String actualPageSource = getCurrentURL(driver);
         assertEquals(actualPageSource, expectedPageSource, "account not created");
     }
 

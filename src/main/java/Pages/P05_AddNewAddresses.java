@@ -13,6 +13,7 @@ import static org.testng.Assert.assertEquals;
 
 @SuppressWarnings("ALL")
 public class P05_AddNewAddresses extends basePage {
+    WebDriver driver;
     private final By firstname = new By.ById("firstname");
     private final By lastname = new By.ById("lastname");
     private final By company = new By.ById("company");
@@ -38,28 +39,28 @@ public class P05_AddNewAddresses extends basePage {
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(firstname));
 
-        clear(firstname);
-        sendKeys(firstname, FirstName);
-        clear(lastname);
-        sendKeys(lastname, LastName);
-        clear(company);
-        sendKeys(company, Company);
-        clear(telephone);
-        sendKeys(telephone, PhoneNumber);
+        clear(driver,firstname);
+        sendKeys(driver,firstname, FirstName);
+        clear(driver,lastname);
+        sendKeys(driver,lastname, LastName);
+        clear(driver,company);
+        sendKeys(driver,company, Company);
+        clear(driver,telephone);
+        sendKeys(driver,telephone, PhoneNumber);
     }
 
     public void setStreetAddress(String Address1, String Address2, String Address3) {
-        clear(street_1);
-        sendKeys(street_1, Address1);
-        clear(street_2);
-        sendKeys(street_2, Address2);
-        clear(street_3);
-        sendKeys(street_3, Address3);
+        clear(driver,street_1);
+        sendKeys(driver,street_1, Address1);
+        clear(driver,street_2);
+        sendKeys(driver,street_2, Address2);
+        clear(driver,street_3);
+        sendKeys(driver,street_3, Address3);
     }
 
     public void setCity(String City) {
-        clear(city);
-        sendKeys(city, City);
+        clear(driver,city);
+        sendKeys(driver,city, City);
     }
 
     public void setState_DROPDOWN(String State) {
@@ -68,14 +69,14 @@ public class P05_AddNewAddresses extends basePage {
     }
 
     public void setState(String State) {
-        clear(state);
-        sendKeys(state, State);
+        clear(driver,state);
+        sendKeys(driver,state, State);
 
 
     }
 
     public void setPostalCode(String PostalCode) {
-        sendKeys(postalcode, PostalCode);
+        sendKeys(driver,postalcode, PostalCode);
     }
 
     public void setCountrydropdown(String Country) {
@@ -84,11 +85,11 @@ public class P05_AddNewAddresses extends basePage {
     }
 
     public void saveAddress() {
-        click(saveaddress);
+        click(driver,saveaddress);
     }
 
     public String getStatus() {
-        return getText(status);
+        return getText(driver,status);
     }
 
     public void verifyAddressAdded() {
@@ -98,7 +99,7 @@ public class P05_AddNewAddresses extends basePage {
 
 
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/address/index/";
-        String actualStatus = getCurrentURL();
+        String actualStatus = getCurrentURL(driver);
         assertEquals(actualStatus, expectedStatus, "Address not saved");
 
     }

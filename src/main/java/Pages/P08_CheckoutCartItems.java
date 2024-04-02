@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import java.time.Duration;
 
 public class P08_CheckoutCartItems extends basePage {
+    WebDriver driver;
     private final By cartbtn = new By.ByXPath("/html/body/div[2]/header/div[2]/div[1]/a");
     private final By topcartcheckoutbutton = new By.ById("top-cart-btn-checkout");
     private final By nextbtn = new By.ByXPath("//button[@class='button action continue primary']");
@@ -24,18 +25,18 @@ public class P08_CheckoutCartItems extends basePage {
                 .pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
 
         wait.until(ExpectedConditions.presenceOfElementLocated(cartbtn));
-        click(cartbtn);
+        click(driver,cartbtn);
 
         wait.until(ExpectedConditions.presenceOfElementLocated(topcartcheckoutbutton));
-        click(topcartcheckoutbutton);
+        click(driver,topcartcheckoutbutton);
 
         wait.until(ExpectedConditions.presenceOfElementLocated(nextbtn));
-        click(nextbtn);
+        click(driver,nextbtn);
 
         Actions actions = new Actions(driver);
         wait.until(ExpectedConditions.elementToBeClickable(placeorderbtn));
         actions.moveToElement(driver.findElement(placeorderbtn)).perform();
-        click(placeorderbtn);
+        click(driver,placeorderbtn);
         wait.until((ExpectedConditions.presenceOfElementLocated(thankstatus)));
 
     }

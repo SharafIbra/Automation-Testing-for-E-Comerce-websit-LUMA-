@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import static org.testng.Assert.assertEquals;
 
 public class P04_ForgetPasswordPage extends basePage {
+    WebDriver driver;
 
     private final By email = new By.ById("email_address");
     private final By resetmypassword = new By.ByXPath("//*[@id=\"form-validate\"]/div/div[1]/button");
@@ -16,11 +17,11 @@ public class P04_ForgetPasswordPage extends basePage {
     }
 
     public void enterEmail(String Email) {
-        sendKeys(email, Email);
+        sendKeys(driver,email, Email);
     }
 
     public void clickResetMyPassword() {
-        click(resetmypassword);
+        click(driver,resetmypassword);
     }
 
     public String getStatus() {

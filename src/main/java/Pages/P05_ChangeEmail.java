@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import static org.testng.Assert.assertEquals;
 
 public class P05_ChangeEmail extends basePage {
+    WebDriver driver;
     private final By changeemail = new By.ById("change-email");
     private final By email = new By.ById("email");
     private final By currentpassword = new By.ById("current-password");
@@ -17,27 +18,27 @@ public class P05_ChangeEmail extends basePage {
     }
 
     public void setChangeEmail(String Email) {
-        click(changeemail);
-        clear(email);
-        sendKeys(email, Email);
+        click(driver,changeemail);
+        clear(driver,email);
+        sendKeys(driver,email, Email);
     }
 
     public void setCurrentPassword(String Password) {
-        sendKeys(currentpassword, Password);
+        sendKeys(driver,currentpassword, Password);
     }
 
     public String getStatus() {
-        return getText(status);
+        return getText(driver,status);
     }
 
     public void save() {
-        click(savebutton);
+        click(driver,savebutton);
     }
 
 
     public void verifyEmailChanged() {
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/account/login/";
-        String actualStatus = getCurrentURL();
+        String actualStatus = getCurrentURL(driver);
         assertEquals(actualStatus, expectedStatus, "Password not changed");
     }
 }

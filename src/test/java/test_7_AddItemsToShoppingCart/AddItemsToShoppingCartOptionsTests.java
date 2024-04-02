@@ -1,5 +1,6 @@
 package test_7_AddItemsToShoppingCart;
 
+import Pages.P01_HomePage;
 import base.BaseTests;
 import org.testng.annotations.Test;
 
@@ -10,7 +11,7 @@ public class AddItemsToShoppingCartOptionsTests extends BaseTests {
 
     @Test (priority = 2)
     void test_AITSC_from_WhatIsNew() {
-        var aitsc = p01HomePage.clickAddItemsToShoppingCart();
+        var aitsc = new P01_HomePage(driver).clickAddItemsToShoppingCart();
         var aitsc_wn = aitsc.clickWhatIsNew_NewInWomen_HoodiesSweatshirts_AddItem();
 
 
@@ -31,7 +32,7 @@ public class AddItemsToShoppingCartOptionsTests extends BaseTests {
 
     @Test (priority = 1)
     void test_AITSC_from_NavigationBar() {
-        var aitsc = p01HomePage.clickAddItemsToShoppingCart();
+        var aitsc = new P01_HomePage(driver).clickAddItemsToShoppingCart();
         var aitsc_wn = aitsc.clickNavigation_Men_Top_Jackets_AddItem();
 
         aitsc_wn.NavigationBar_addMultiItem_Men_Jackets(MenProduct);

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import static org.testng.Assert.assertEquals;
 
 public class P03_LoginPage extends basePage {
+    WebDriver driver;
 
     private final By email = new By.ById("email");
     private final By password = new By.ById("pass");
@@ -19,13 +20,13 @@ public class P03_LoginPage extends basePage {
 
     @Step("Login with email: {0} & password: {1}")
     public void setLoginCredentials(String Email, String Password) {
-        sendKeys(email, Email);
-        sendKeys(password, Password);
+        sendKeys(driver,email, Email);
+        sendKeys(driver,password, Password);
     }
 
     @Step("Click sign in ")
     public void signIn() {
-        click(signin);
+        click(driver,signin);
     }
 
 

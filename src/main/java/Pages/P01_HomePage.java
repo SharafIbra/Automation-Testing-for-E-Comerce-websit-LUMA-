@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class P01_HomePage extends basePage {
+    WebDriver driver;
     private final By createacount = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
     private final By signin = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a");
     private final By forgetpassword = new By.ByXPath("//*[@id=\"login-form\"]/fieldset/div[4]/div[2]/a");
@@ -15,20 +16,20 @@ public class P01_HomePage extends basePage {
 
     @Step("Click Create account button in home page to create new user account")
     public P02_createAccountPage clickCreateAccountPage() {
-        click(createacount);
+        click(driver,createacount);
         return new P02_createAccountPage(driver);
     }
 
 
     @Step("Click Sign In button in home to login ")
     public P03_LoginPage clickLoginPage() {
-        click(signin);
+        click(driver,signin);
         return new P03_LoginPage(driver);
     }
 
     public P04_ForgetPasswordPage clickForgetPasswordPage() {
-        click(signin);
-        click(forgetpassword);
+        click(driver,signin);
+        click(driver,forgetpassword);
         return new P04_ForgetPasswordPage(driver);
     }
 

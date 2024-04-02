@@ -1,0 +1,38 @@
+<?xml-model href=""?>
+<suite name="LUMA Test Suite" >
+	<parameter name="browser" value="Chrome" />
+	<test name="Create Account " preserve-order="true">
+		<classes>
+			<class name="test_2_CreateAccountPage.CreateAccountPageTests" />
+		</classes>
+	</test>
+	<test name="Login Account " parallel = "methods"  >
+		<classes>
+			<class name="test_3_LoginPage.LoginPageTests" />
+		</classes>
+	</test>
+	<test name="Add Items To Shopping Cart" preserve-order="true">
+		<classes>
+			<class name="test_7_AddItemsToShoppingCart.AddItemsToShoppingCartOptionsTests" />
+		</classes>
+	</test>
+	<test name="Edit Account Information" >
+		<classes>
+			<class name="test_5_EditAccountInformation.EditAccountInformationTests" />
+		</classes>
+	</test>
+	<test name="Forget Password" preserve-order="true">
+		<classes>
+			<class name="test_4_ForgetPassword.ForgetPasswordPageTests" />
+		</classes>
+	</test>
+	<test name="Search product" preserve-order="true">
+		<classes>
+			<class name="test_6_SearchProduct.SearchProductTests" />
+		</classes>
+	</test>
+
+
+
+</suite>
+

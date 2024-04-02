@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LUMA Test Suite" >
+	<test name="test login1" >
+		<classes>
+			<class name="test_3_LoginPage.LoginPageTests" >
+			<methods>
+				<include name= "testLoginValidCredentials"/>
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="test login2" >
+
+		<classes>
+			<class name="test_3_LoginPage.LoginPageTests" >
+			<methods>
+				<include name= "testLoginInValidCredentials"/>
+			</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>
+<!--                                                                    -->

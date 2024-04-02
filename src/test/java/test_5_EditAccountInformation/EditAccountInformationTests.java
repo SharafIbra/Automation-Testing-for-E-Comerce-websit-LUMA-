@@ -1,5 +1,6 @@
 package test_5_EditAccountInformation;
 
+import Pages.P01_HomePage;
 import base.BaseTests;
 import org.testng.annotations.Test;
 
@@ -8,11 +9,11 @@ public class EditAccountInformationTests extends BaseTests {
 
     @Test(priority = 4)
     void testChangePassword() {
-        var log = p01HomePage.clickLoginPage();
+        var log = new P01_HomePage(driver).clickLoginPage();
         log.setLoginCredentials(email, password);
         log.signIn();
 
-        var edit = p01HomePage.clickEditAccountPage();
+        var edit = new P01_HomePage(driver).clickEditAccountPage();
         var change = edit.clickChangePassword();
         change.setCurrentPassword(password);
         //will work with the same password for no conflict
@@ -25,11 +26,11 @@ public class EditAccountInformationTests extends BaseTests {
 
     @Test(priority = 3)
     void testChangeEmail() {
-        var log = p01HomePage.clickLoginPage();
+        var log = new P01_HomePage(driver).clickLoginPage();
         log.setLoginCredentials(email, password);
         log.signIn();
 
-        var edit = p01HomePage.clickEditAccountPage();
+        var edit = new P01_HomePage(driver).clickEditAccountPage();
 
         var change = edit.clickChangeEmail();
         change.setChangeEmail(email);
@@ -42,11 +43,11 @@ public class EditAccountInformationTests extends BaseTests {
 
     @Test(priority = 1)
     void testAddNewAddress_DefaultAddress_FirstTime() {
-        var log = p01HomePage.clickLoginPage();
+        var log = new P01_HomePage(driver).clickLoginPage();
         log.setLoginCredentials(email, password);
         log.signIn();
 
-        var edit = p01HomePage.clickEditAccountPage();
+        var edit = new P01_HomePage(driver).clickEditAccountPage();
 
         var Daddress = edit.clickAddDefaultAddresses();
         Daddress.setContactInformation(firstname, lastname, company, phone_number);
@@ -63,11 +64,11 @@ public class EditAccountInformationTests extends BaseTests {
 
     @Test(priority = 2)
     void testAddNewAddress_IfCountryUSA() {
-        var log = p01HomePage.clickLoginPage();
+        var log = new P01_HomePage(driver).clickLoginPage();
         log.setLoginCredentials(email, password);
         log.signIn();
 
-        var edit = p01HomePage.clickEditAccountPage();
+        var edit = new P01_HomePage(driver).clickEditAccountPage();
 
         var Naddress = edit.clickAddNewAddresses();
         Naddress.setContactInformation(firstname, lastname, company, phone_number);

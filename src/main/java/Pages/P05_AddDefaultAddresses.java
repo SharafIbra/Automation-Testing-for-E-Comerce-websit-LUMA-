@@ -12,6 +12,7 @@ import java.time.Duration;
 import static org.testng.Assert.assertEquals;
 
 public class P05_AddDefaultAddresses extends basePage {
+    WebDriver driver;
 
 
     private final By firstname = new By.ById("firstname");
@@ -35,22 +36,22 @@ public class P05_AddDefaultAddresses extends basePage {
     }
 
     public void setContactInformation(String FirstName, String LastName, String Company, String PhoneNumber) {
-        clear(firstname);
-        sendKeys(firstname, FirstName);
-        clear(lastname);
-        sendKeys(lastname, LastName);
-        sendKeys(company, Company);
-        sendKeys(telephone, PhoneNumber);
+        clear(driver,firstname);
+        sendKeys(driver,firstname, FirstName);
+        clear(driver,lastname);
+        sendKeys(driver,lastname, LastName);
+        sendKeys(driver,company, Company);
+        sendKeys(driver,telephone, PhoneNumber);
     }
 
     public void setStreetAddress(String Address1, String Address2, String Address3) {
-        sendKeys(street_1, Address1);
-        sendKeys(street_2, Address2);
-        sendKeys(street_3, Address3);
+        sendKeys(driver,street_1, Address1);
+        sendKeys(driver,street_2, Address2);
+        sendKeys(driver,street_3, Address3);
     }
 
     public void setCity(String City) {
-        sendKeys(city, City);
+        sendKeys(driver,city, City);
     }
 
     public void setState_DROPDOWN(String State) {
@@ -59,11 +60,11 @@ public class P05_AddDefaultAddresses extends basePage {
     }
 
     public void setState(String State) {
-        sendKeys(state, State);
+        sendKeys(driver,state, State);
     }
 
     public void setPostalCode(String PostalCode) {
-        sendKeys(postalcode, PostalCode);
+        sendKeys(driver,postalcode, PostalCode);
     }
 
     public void setCountrydropdown(String Country) {
@@ -72,7 +73,7 @@ public class P05_AddDefaultAddresses extends basePage {
     }
 
     public void saveAddress() {
-        click(saveaddress);
+        click(driver,saveaddress);
     }
 
     public void verifyAddressAdded() {
@@ -82,7 +83,7 @@ public class P05_AddDefaultAddresses extends basePage {
 
 
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/address/index/";
-        String actualStatus = getCurrentURL();
+        String actualStatus = getCurrentURL(driver);
         assertEquals(actualStatus, expectedStatus, "Address not saved");
 
     }
