@@ -55,7 +55,7 @@ public class BaseTests extends testData {
     @AfterTest
     public void tearDown() {
         driver.quit();
-        Thread.currentThread().interrupt(); // after driver close , close opened thread which open in each run
+        // after driver close , close opened thread which open in each run
     }
 
 
