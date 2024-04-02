@@ -12,14 +12,14 @@
 		<parameter name="browser" value="Chrome" />
 		<classes>
 			<class name="test_7_AddItemsToShoppingCart.AddItemsToShoppingCartOptionsTests" />
-			<class name="test_5_EditAccountInformation.EditAccountInformationTests" />
+			<class name="test_5_EditAccountAddresses.EditAccountAddressesTests" />
 		</classes>
 	</test>
 
 	<test name="Run on Edge" preserve-order="true">
 		<parameter name="browser" value="Edge" />
 		<classes>
-			<class name="test_4_ForgetPassword.ForgetPasswordPageTests" />
+			<class name="test_4_PasswordAndEmail.ForgetPasswordPageTests" />
 			<class name="test_6_SearchProduct.SearchProductTests" />
 		</classes>
 	</test>

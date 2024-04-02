@@ -27,9 +27,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         By addtocartbutton = new By.ByXPath(xpath_addtocartbutton);
 
 
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(addtocartbutton)));
+        fluentWait(driver,addtocartbutton);
 
 
         click(driver,addtocartbutton);
@@ -41,9 +39,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         By addtocartbutton = new By.ByXPath(xpath_addtocartbutton);
 
 
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(addtocartbutton)));
+        fluentWait(driver,addtocartbutton);
 
 
         click(driver,addtocartbutton);
@@ -63,9 +59,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         String xpath_size = "option-label-size-143-item-" + (166 + sizeNum);
         By size = new By.ById(xpath_size);
 
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-        wait.until(ExpectedConditions.presenceOfElementLocated(size));
+        fluentWait(driver,size);
         click(driver,size);
 
     }
@@ -94,9 +88,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
     }
 
     public void selectQuantity(String Quantity) {
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-        wait.until(ExpectedConditions.presenceOfElementLocated(quantity));
+        fluentWait(driver,quantity);
         clear(driver,quantity);
         sendKeys(driver,quantity, Quantity);
     }
@@ -107,9 +99,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
     }
 
     public String verifyItemAddedToCart() {
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-        wait.until(ExpectedConditions.presenceOfElementLocated(status));
+        fluentWait(driver,status);
 
         return getText(driver,status);
     }

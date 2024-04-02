@@ -19,12 +19,12 @@
 	</test>
 	<test name="Edit Account Information" >
 		<classes>
-			<class name="test_5_EditAccountInformation.EditAccountInformationTests" />
+			<class name="test_5_EditAccountAddresses.EditAccountAddressesTests" />
 		</classes>
 	</test>
 	<test name="Forget Password" preserve-order="true">
 		<classes>
-			<class name="test_4_ForgetPassword.ForgetPasswordPageTests" />
+			<class name="test_4_PasswordAndEmail.ForgetPasswordPageTests" />
 		</classes>
 	</test>
 	<test name="Search product" preserve-order="true">

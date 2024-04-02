@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 
 public class P01_HomePage extends basePage {
     WebDriver driver;
-    private final By createacount = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
-    private final By signin = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a");
-    private final By forgetpassword = new By.ByXPath("//*[@id=\"login-form\"]/fieldset/div[4]/div[2]/a");
+    private final By createAccount = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
+    private final By signIn = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a");
+    private final By forgetPassword = new By.ByXPath("//*[@id=\"login-form\"]/fieldset/div[4]/div[2]/a");
 
     public P01_HomePage(WebDriver driver) {
         this.driver = driver;
@@ -16,25 +16,25 @@ public class P01_HomePage extends basePage {
 
     @Step("Click Create account button in home page to create new user account")
     public P02_createAccountPage clickCreateAccountPage() {
-        click(driver,createacount);
+        click(driver, createAccount);
         return new P02_createAccountPage(driver);
     }
 
 
     @Step("Click Sign In button in home to login ")
     public P03_LoginPage clickLoginPage() {
-        click(driver,signin);
+        click(driver, signIn);
         return new P03_LoginPage(driver);
     }
 
-    public P04_ForgetPasswordPage clickForgetPasswordPage() {
-        click(driver,signin);
-        click(driver,forgetpassword);
-        return new P04_ForgetPasswordPage(driver);
+    public P04_PasswordAndEmail_ResetPassword clickForgetPasswordPage() {
+        click(driver, signIn);
+        click(driver, forgetPassword);
+        return new P04_PasswordAndEmail_ResetPassword(driver);
     }
 
-    public P05_EditAccountInformation clickEditAccountPage() {
-        return new P05_EditAccountInformation(driver);
+    public P04and5_EditAccountInformation___pages clickEditAccountPage() {
+        return new P04and5_EditAccountInformation___pages(driver);
     }
 
 
