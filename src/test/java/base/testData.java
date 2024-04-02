@@ -18,7 +18,7 @@ public class testData {
         Object object = null;
 
         try {
-            object = jsonParser.parse(new FileReader("D:\\St\\Projects\\LUMA\\src\\main\\resources\\testData.json"));
+            object = jsonParser.parse(new FileReader("D:\\St\\Projects\\1-LUMA\\src\\main\\resources\\testData\\testData.json"));
         } catch (IOException | ParseException ex) {
             throw new RuntimeException(ex);
         }

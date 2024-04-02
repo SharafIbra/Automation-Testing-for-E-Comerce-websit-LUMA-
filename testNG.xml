@@ -1,38 +1,12 @@
-<?xml-model href=""?>
-<suite name="LUMA Test Suite" >
-	<parameter name="browser" value="Chrome" />
-	<test name="Create Account " preserve-order="true">
-		<classes>
-			<class name="test_2_CreateAccountPage.CreateAccountPageTests" />
-		</classes>
-	</test>
-	<test name="Login Account " parallel = "methods"  >
-		<classes>
-			<class name="test_3_LoginPage.LoginPageTests" />
-		</classes>
-	</test>
-	<test name="Add Items To Shopping Cart" preserve-order="true">
-		<classes>
-			<class name="test_7_AddItemsToShoppingCart.AddItemsToShoppingCartOptionsTests" />
-		</classes>
-	</test>
-	<test name="Edit Account Information" >
-		<classes>
-			<class name="test_5_EditAccountInformation.EditAccountInformationTests" />
-		</classes>
-	</test>
-	<test name="Forget Password" preserve-order="true">
-		<classes>
-			<class name="test_4_ForgetPassword.P05ForgetPasswordPageTests" />
-		</classes>
-	</test>
-	<test name="Search product" preserve-order="true">
-		<classes>
-			<class name="test_6_SearchProduct.SearchProductTests" />
-		</classes>
-	</test>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
 
-
+    <parameter name="browser" value="chrome-headless" />
+    <suite-files>
+        <suite-file path="testNG_LoginScenarios.xml"/>
+        <!--  <suite-file path="registrationNegativeScenario.xml"/>  -->
+        <!-- <suite-file path="loginNegativeScenario.xml"/>  -->
+    </suite-files>
 
 </suite>
-
