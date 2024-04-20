@@ -1,1 +1,0 @@
-{"uuid":"f4337aaa-4190-40b2-9987-34a3c5b27bc5","name":"LUMA Test Suite","children":["08c31062-ec00-423e-bb31-c128e4508525"],"befores":[{"name":"defineSuite","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1712058860226,"stop":1712058860243}],"afters":[],"start":1712058860176,"stop":1712058878452}

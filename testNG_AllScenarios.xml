@@ -65,6 +65,16 @@
 			<class name="test_6_SearchProduct.SearchProductTests" />
 		</classes>
 	</test>
+	<test name="Purchases order from navigation bar " preserve-order="true">
+		<classes>
+			<class name="test_7_AddItemsToShoppingCart.PurchasesOrder_NavigationBar" />
+		</classes>
+	</test>
+	<test name="Purchases order from status bar (whats new)" preserve-order="true">
+		<classes>
+			<class name="test_7_AddItemsToShoppingCart.PurchasesOrder_WhatIsNew" />
+		</classes>
+	</test>
 	<test name="CheckOutCartItem" preserve-order="true">
 		<classes>
 			<class name="test_8_CheckoutCartItems.CheckoutCartItemsTests" />

@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class testData {
 
-    private final int userNumber = 1;
+    private final int userNumber = 2;
     private final int addressNumber = 1;
 
     {
