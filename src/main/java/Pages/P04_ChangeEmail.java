@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.testng.Assert.assertEquals;
 
-public class P04_PasswordAndEmail_ChangeEmail extends basePage {
+public class P04_ChangeEmail extends basePage {
     WebDriver driver;
     private final By changeemail = new By.ById("change-email");
     private final By email = new By.ById("email");
@@ -13,18 +13,18 @@ public class P04_PasswordAndEmail_ChangeEmail extends basePage {
     private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[2]/div[2]/div/div/div");
     private final By savebutton = new By.ByXPath("//*[@id=\"form-validate\"]/div/div[1]/button");
 
-    public P04_PasswordAndEmail_ChangeEmail(WebDriver driver) {
+    public P04_ChangeEmail(WebDriver driver) {
         this.driver = driver;
     }
 
-    public P04_PasswordAndEmail_ChangeEmail setChangeEmail(String Email) {
+    public P04_ChangeEmail setChangeEmail(String Email) {
         click(driver,changeemail);
         clear(driver,email);
         sendKeys(driver,email, Email);
         return this;
     }
 
-    public P04_PasswordAndEmail_ChangeEmail setCurrentPassword(String Password) {
+    public P04_ChangeEmail setCurrentPassword(String Password) {
         sendKeys(driver,currentpassword, Password);
         return this;
     }
@@ -33,12 +33,12 @@ public class P04_PasswordAndEmail_ChangeEmail extends basePage {
         return getText(driver,status);
     }
 
-    public P04_PasswordAndEmail_ChangeEmail save() {
+    public P04_ChangeEmail save() {
         click(driver,savebutton);
         return this;
     }
 
-    public P04_PasswordAndEmail_ChangeEmail verifyEmailChanged() {
+    public P04_ChangeEmail verifyEmailChanged() {
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/account/login/";
         String actualStatus = getCurrentURL(driver);
         assertEquals(actualStatus, expectedStatus, "Password not changed");

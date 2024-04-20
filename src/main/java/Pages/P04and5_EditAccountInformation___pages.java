@@ -20,24 +20,24 @@ public class P04and5_EditAccountInformation___pages extends basePage {
         this.driver = driver;
     }
 
-    public P04_PasswordAndEmail_ChangePassword clickChangePassword() {
+    public P04_ChangePassword clickChangePassword() {
         fluentWait(driver,myacountdropdownbutton);
         click(driver,myacountdropdownbutton);
 
         fluentWait(driver,myacount);
         click(driver,myacount);
         click(driver,changepassword);
-        return new P04_PasswordAndEmail_ChangePassword(driver);
+        return new P04_ChangePassword(driver);
     }
 
-    public P04_PasswordAndEmail_ChangeEmail clickChangeEmail() {
+    public P04_ChangeEmail clickChangeEmail() {
         fluentWait(driver,myacountdropdownbutton);
         click(driver,myacountdropdownbutton);
 
         fluentWait(driver,myacount);
         click(driver,myacount);
         click(driver,edit);
-        return new P04_PasswordAndEmail_ChangeEmail(driver);
+        return new P04_ChangeEmail(driver);
     }
 
     public P05_AddDefaultAddresses clickAddDefaultAddresses() {

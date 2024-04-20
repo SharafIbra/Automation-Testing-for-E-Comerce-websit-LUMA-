@@ -27,10 +27,10 @@ public class P01_HomePage extends basePage {
         return new P03_LoginPage(driver);
     }
 
-    public P04_PasswordAndEmail_ResetPassword clickForgetPasswordPage() {
+    public P04_ResetPassword clickForgetPasswordPage() {
         click(driver, signIn);
         click(driver, forgetPassword);
-        return new P04_PasswordAndEmail_ResetPassword(driver);
+        return new P04_ResetPassword(driver);
     }
 
     public P04and5_EditAccountInformation___pages clickEditAccountPage() {

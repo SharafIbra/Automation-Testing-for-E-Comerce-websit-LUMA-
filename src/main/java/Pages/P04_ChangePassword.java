@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.testng.Assert.assertEquals;
 
-public class P04_PasswordAndEmail_ChangePassword extends basePage {
+public class P04_ChangePassword extends basePage {
     WebDriver driver;
 
     private final By currentpassword = new By.ById("current-password");
@@ -13,29 +13,31 @@ public class P04_PasswordAndEmail_ChangePassword extends basePage {
     private final By confirmnewpassword = new By.ById("password-confirmation");
     private final By savebutton = new By.ByXPath("//*[@id=\"form-validate\"]/div/div[1]/button");
 
-    public P04_PasswordAndEmail_ChangePassword(WebDriver driver) {
+    public P04_ChangePassword(WebDriver driver) {
         this.driver = driver;
     }
 
-    public P04_PasswordAndEmail_ChangePassword setCurrentPassword(String currentPassword) {
+    public P04_ChangePassword setCurrentPassword(String currentPassword) {
         sendKeys(driver,currentpassword, currentPassword);
+        return this;
     }
 
-    public P04_PasswordAndEmail_ChangePassword setNewPassword(String newPassword) {
+    public P04_ChangePassword setNewPassword(String newPassword) {
         sendKeys(driver,newpassword, newPassword);
+        return this;
     }
 
-    public P04_PasswordAndEmail_ChangePassword setConfirmNewPassword(String confirmNewPassword) {
+    public P04_ChangePassword setConfirmNewPassword(String confirmNewPassword) {
         sendKeys(driver,confirmnewpassword, confirmNewPassword);
         return this;
     }
 
-    public P04_PasswordAndEmail_ChangePassword save() {
+    public P04_ChangePassword save() {
         click(driver,savebutton);
         return this;
     }
 
-    public P04_PasswordAndEmail_ChangePassword verifyPasswordChanged() {
+    public P04_ChangePassword verifyPasswordChanged() {
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/account/login/";
         String actualStatus = getCurrentURL(driver);
         assertEquals(actualStatus, expectedStatus, "Password not changed");
