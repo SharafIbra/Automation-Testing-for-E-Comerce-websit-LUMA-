@@ -1,23 +1,26 @@
 package test_4_PasswordAndEmail;
 
 import Pages.P01_HomePage;
+import Pages.P03_LoginPage;
+import Pages.P04_PasswordAndEmail_ChangePassword;
 import base.BaseTests;
 import org.testng.annotations.Test;
 
 public class ChangePasswordTests extends BaseTests {
     @Test(priority = 4)
     void testChangePassword() {
-        var log = new P01_HomePage(driver).clickLoginPage();
-        log.setLoginCredentials(email, password);
-        log.signIn();
+        new P01_HomePage(driver).clickLoginPage();
+        new P03_LoginPage(driver)
+                .setLoginCredentials(email, password)
+                .signIn();
 
-        var change = new P01_HomePage(driver).clickEditAccountPage().clickChangePassword();
-        change.setCurrentPassword(password);
+        new P01_HomePage(driver).clickEditAccountPage().clickChangePassword();
+        new P04_PasswordAndEmail_ChangePassword(driver).setCurrentPassword(password)
         //will work with the same password for no conflict
-        change.setNewPassword(password);
-        change.setConfirmNewPassword(confirm_password);
-        change.save();
-        change.verifyPasswordChanged();
+                .setNewPassword(password)
+                .setConfirmNewPassword(confirm_password)
+                .save()
+                .verifyPasswordChanged();
     }
 
 }

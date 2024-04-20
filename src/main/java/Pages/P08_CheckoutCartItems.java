@@ -15,7 +15,7 @@ public class P08_CheckoutCartItems extends basePage {
         this.driver = driver;
     }
 
-    public void checkOutItemInCart() {
+    public P08_CheckoutCartItems checkOutItemInCart() {
         fluentWait(driver,cartbtn);
         click(driver,cartbtn);
 
@@ -31,7 +31,7 @@ public class P08_CheckoutCartItems extends basePage {
 
         click(driver,placeorderbtn);
         fluentWait(driver,thankstatus);
-
+        return this;
     }
 
 

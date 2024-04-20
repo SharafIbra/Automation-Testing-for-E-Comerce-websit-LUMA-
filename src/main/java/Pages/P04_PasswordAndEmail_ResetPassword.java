@@ -16,22 +16,25 @@ public class P04_PasswordAndEmail_ResetPassword extends basePage {
         this.driver = driver;
     }
 
-    public void enterEmail(String Email) {
+    public P04_PasswordAndEmail_ResetPassword enterEmail(String Email) {
         sendKeys(driver,email, Email);
+        return this;
     }
 
-    public void clickResetMyPassword() {
+    public P04_PasswordAndEmail_ResetPassword clickResetMyPassword() {
         click(driver,resetmypassword);
+        return this;
     }
 
     public String getStatus() {
         return driver.findElement(status).getText();
     }
 
-    public void verifyForgetPassword() {
+    public P04_PasswordAndEmail_ResetPassword verifyForgetPassword() {
         String expectedURL = "https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2luZGV4Lw%2C%2C/";
         String actualURL = driver.getCurrentUrl();
         assertEquals(actualURL, expectedURL);
+        return this;
     }
 
 

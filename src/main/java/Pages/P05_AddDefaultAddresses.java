@@ -35,57 +35,63 @@ public class P05_AddDefaultAddresses extends basePage {
         this.driver = driver;
     }
 
-    public void setContactInformation(String FirstName, String LastName, String Company, String PhoneNumber) {
+    public P05_AddDefaultAddresses setContactInformation(String FirstName, String LastName, String Company, String PhoneNumber) {
         clear(driver,firstname);
         sendKeys(driver,firstname, FirstName);
         clear(driver,lastname);
         sendKeys(driver,lastname, LastName);
         sendKeys(driver,company, Company);
         sendKeys(driver,telephone, PhoneNumber);
+        return this;
     }
 
-    public void setStreetAddress(String Address1, String Address2, String Address3) {
+    public P05_AddDefaultAddresses setStreetAddress(String Address1, String Address2, String Address3) {
         sendKeys(driver,street_1, Address1);
         sendKeys(driver,street_2, Address2);
         sendKeys(driver,street_3, Address3);
+        return this;
     }
 
-    public void setCity(String City) {
+    public P05_AddDefaultAddresses setCity(String City) {
         sendKeys(driver,city, City);
+        return this;
     }
 
-    public void setState_DROPDOWN(String State) {
+    public P05_AddDefaultAddresses setState_DROPDOWN(String State) {
         Select select = new Select(driver.findElement(statedropdown));
         select.selectByVisibleText(State);
+        return this;
     }
 
-    public void setState(String State) {
+    public P05_AddDefaultAddresses setState(String State) {
         sendKeys(driver,state, State);
+        return this;
     }
 
-    public void setPostalCode(String PostalCode) {
+    public P05_AddDefaultAddresses setPostalCode(String PostalCode) {
         sendKeys(driver,postalcode, PostalCode);
+        return this;
     }
 
-    public void setCountrydropdown(String Country) {
+    public P05_AddDefaultAddresses setCountrydropdown(String Country) {
         Select select = new Select(driver.findElement(countrydropdown));
         select.selectByVisibleText(Country);
+        return this;
     }
 
-    public void saveAddress() {
+    public P05_AddDefaultAddresses saveAddress() {
         click(driver,saveaddress);
+        return this;
     }
 
-    public void verifyAddressAdded() {
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-        wait.until(ExpectedConditions.presenceOfElementLocated(status));
+    public P05_AddDefaultAddresses verifyAddressAdded() {
+        fluentWait(driver,status);
 
 
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/address/index/";
         String actualStatus = getCurrentURL(driver);
         assertEquals(actualStatus, expectedStatus, "Address not saved");
-
+        return this;
     }
 
 

@@ -14,13 +14,14 @@ public class P06_SearchProduct extends basePage {
     }
 
 
-    public void enterProductName(String productName) {
+    public P06_SearchProduct enterProductName(String productName) {
         /*FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(searchtextfield)));*/
         click(driver,searchtextfield);
         sendKeys(driver,searchtextfield, productName);
         click(driver,searchButton);
+        return this;
     }
 
     public String getStatus() {

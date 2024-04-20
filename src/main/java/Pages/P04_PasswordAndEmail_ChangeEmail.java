@@ -17,28 +17,32 @@ public class P04_PasswordAndEmail_ChangeEmail extends basePage {
         this.driver = driver;
     }
 
-    public void setChangeEmail(String Email) {
+    public P04_PasswordAndEmail_ChangeEmail setChangeEmail(String Email) {
         click(driver,changeemail);
         clear(driver,email);
         sendKeys(driver,email, Email);
+        return this;
     }
 
-    public void setCurrentPassword(String Password) {
+    public P04_PasswordAndEmail_ChangeEmail setCurrentPassword(String Password) {
         sendKeys(driver,currentpassword, Password);
+        return this;
     }
 
     public String getStatus() {
         return getText(driver,status);
     }
 
-    public void save() {
+    public P04_PasswordAndEmail_ChangeEmail save() {
         click(driver,savebutton);
+        return this;
     }
 
-    public void verifyEmailChanged() {
+    public P04_PasswordAndEmail_ChangeEmail verifyEmailChanged() {
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/account/login/";
         String actualStatus = getCurrentURL(driver);
         assertEquals(actualStatus, expectedStatus, "Password not changed");
+        return this;
     }
 
 
