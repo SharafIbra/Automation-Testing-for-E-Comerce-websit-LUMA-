@@ -26,11 +26,21 @@ public class P07_AddItemsToShoppingCart_Options extends basePage {
         this.driver = driver;
     }
 
+
     public P07_AddItemsToShoppingCart_Functions clickWhatIsNew_NewInWomen_HoodiesSweatshirts_AddItem() {
 
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-        wait.until(ExpectedConditions.presenceOfElementLocated(whatisnewbutton));
+        fluentWait(driver,whatisnewbutton);
+
+        click(driver,whatisnewbutton);
+
+        click(driver,hoodiessweatshirts_women___whatsnew);
+        return new P07_AddItemsToShoppingCart_Functions(driver);
+    }
+
+
+    public P07_AddItemsToShoppingCart_Functions clickWhatIsNew_NewInWomen_HoodiesSweatshirts_AddItem___modified() {
+
+        fluentWait(driver,whatisnewbutton);
 
         click(driver,whatisnewbutton);
 
@@ -43,15 +53,13 @@ public class P07_AddItemsToShoppingCart_Options extends basePage {
 
         Actions actions = new Actions(driver);
 
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-
+        fluentWait(driver,mennavigation);
         actions.moveToElement(driver.findElement(mennavigation)).perform();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(mentops));
+        fluentWait(driver,mentops);
         actions.moveToElement(driver.findElement(mentops)).perform();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(mentopsjackets));
+        fluentWait(driver,mentopsjackets);
         actions.moveToElement(driver.findElement(mentopsjackets)).perform();
 
         click(driver,mentopsjackets);

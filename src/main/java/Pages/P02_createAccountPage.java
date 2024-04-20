@@ -32,28 +32,32 @@ public class P02_createAccountPage extends basePage {
     }
 
     @Step("Enter Personal Information First Name: {0} & Last Name: {1}")
-    public void setPersonalInformation(String firstName, String lastName) {
+    public P02_createAccountPage setPersonalInformation(String firstName, String lastName) {
         sendKeys(driver,firstname, firstName);
         sendKeys(driver,lastname, lastName);
+        return this;
     }
 
     @Step("Enter Account Information Email: {0} & Password: {1} & Confirm Password: {2}")
-    public void setSignInInformation(String Email, String Password, String confirmPassword) {
+    public P02_createAccountPage setSignInInformation(String Email, String Password, String confirmPassword) {
         sendKeys(driver,email, Email);
         sendKeys(driver,password, Password);
         sendKeys(driver,confirm_password, confirmPassword);
+        return this;
     }
 
     @Step("Click create account")
-    public void create_account() {
+    public P02_createAccountPage create_account() {
         click(driver,create_account_button);
+        return this;
     }
 
     @Step("Verify account is created successfully")
-    public void verifyPageURL() {
+    public P02_createAccountPage verifyPageURL() {
         String expectedPageSource = "https://magento.softwaretestingboard.com/customer/account/";
         String actualPageSource = getCurrentURL(driver);
         assertEquals(actualPageSource, expectedPageSource, "account not created");
+        return this;
     }
 
     /*@Step("Reset password and link of email: {0}")
@@ -63,17 +67,16 @@ public class P02_createAccountPage extends basePage {
         click(clicktresetpasswordbtn);
     }*/
     @Step("Verify that there is already an account with this email address")
-    public void verifyEmailIsRegisteredBefore() {
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
-        wait.until(ExpectedConditions.presenceOfElementLocated(clickherebtn));
+    public P02_createAccountPage verifyEmailIsRegisteredBefore() {
+        fluentWait(driver,clickherebtn);
 
         String expectedStatus = "There is already an account with this email address";
-        wait.until(ExpectedConditions.presenceOfElementLocated(status));
+        fluentWait(driver,status);
 
 
         String actualStatus = driver.findElement(status).getText();
         System.out.println(actualStatus);
         assertTrue(actualStatus.contains(expectedStatus), "account not created");
+        return this;
     }
 }

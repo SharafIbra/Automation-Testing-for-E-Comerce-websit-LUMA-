@@ -14,7 +14,7 @@
 	</test>
 	<test name="Add Items To Shopping Cart" preserve-order="true">
 		<classes>
-			<class name="test_7_AddItemsToShoppingCart.AddItemsToShoppingCartOptionsTests" />
+			<class name="test_7_AddItemsToShoppingCart.PurchasesOrder_WhatIsNew" />
 		</classes>
 	</test>
 	<test name="Edit Account Information" >

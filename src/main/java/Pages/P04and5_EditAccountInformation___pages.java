@@ -51,16 +51,7 @@ public class P04and5_EditAccountInformation___pages extends basePage {
         return new P05_AddDefaultAddresses(driver);
     }
 
-    public P05_AddNewAddresses clickAddNewAddresses() {
-        fluentWait(driver,myacountdropdownbutton);
 
-        click(driver,myacount);
-
-        click(driver, manageaddressesFirstaddesss);
-
-        click(driver,addnewaddresses);
-        return new P05_AddNewAddresses(driver);
-    }
 
 
 }

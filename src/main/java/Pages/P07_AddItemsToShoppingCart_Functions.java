@@ -21,7 +21,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         this.driver = driver;
     }
 
-    public void WhatsNew_addMultiItem_Women_HoodiesSweatshirts(String productName) {
+    public P07_AddItemsToShoppingCart_Functions WhatsNew_addMultiItem_Women_HoodiesSweatshirts(String productName) {
         //a[normalize-space()='Circe Hooded Ice Fleece']
         String xpath_addtocartbutton = "//a[normalize-space()='" + productName + "']";
         By addtocartbutton = new By.ByXPath(xpath_addtocartbutton);
@@ -31,9 +31,9 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
 
 
         click(driver,addtocartbutton);
-
+        return this;
     }
-    public void NavigationBar_addMultiItem_Men_Jackets(String productName) {
+    public P07_AddItemsToShoppingCart_Functions NavigationBar_addMultiItem_Men_Jackets(String productName) {
         //a[normalize-space()='Circe Hooded Ice Fleece']
         String xpath_addtocartbutton = "//a[normalize-space()='" + productName + "']";
         By addtocartbutton = new By.ByXPath(xpath_addtocartbutton);
@@ -43,7 +43,7 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
 
 
         click(driver,addtocartbutton);
-
+        return this;
     }
 
 
@@ -55,20 +55,21 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
      * size docs
      * xs-> 0    s-> 1      m->2        l->3        xl->4
      */
-    public void selectSize(int sizeNum) {
+    public P07_AddItemsToShoppingCart_Functions selectSize(int sizeNum) {
         String xpath_size = "option-label-size-143-item-" + (166 + sizeNum);
         By size = new By.ById(xpath_size);
 
         fluentWait(driver,size);
         click(driver,size);
 
+        return this;
     }
 
     /**
      * colour starts with 1
      * first colour-> 1      second colour->2        third colour->3
      */
-    public void selectColour(String colourName) {
+    public P07_AddItemsToShoppingCart_Functions selectColour(String colourName) {
         String xpath_colour = switch (colourName) {
             case "Pink" -> xpath_colour = "option-label-color-93-item-57";
             case "White" -> xpath_colour = "option-label-color-93-item-59";
@@ -85,17 +86,20 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         By colour = new By.ById(xpath_colour);
 
         click(driver,colour);
+        return this;
     }
 
-    public void selectQuantity(String Quantity) {
+    public P07_AddItemsToShoppingCart_Functions selectQuantity(String Quantity) {
         fluentWait(driver,quantity);
         clear(driver,quantity);
         sendKeys(driver,quantity, Quantity);
+        return this;
     }
 
-    public void submitProductToCart() {
+    public P07_AddItemsToShoppingCart_Functions submitProductToCart() {
         click(driver,addtocartbutton_f);
         /*return driver.findElement(nameofproduct).getText();*/
+        return this;
     }
 
     public String verifyItemAddedToCart() {

@@ -1,13 +1,8 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-
-import java.time.Duration;
 
 public class P08_CheckoutCartItems extends basePage {
     WebDriver driver;
@@ -20,24 +15,22 @@ public class P08_CheckoutCartItems extends basePage {
         this.driver = driver;
     }
 
-    public void checkoutItemInCart() {
-        FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(cartbtn));
+    public void checkOutItemInCart() {
+        fluentWait(driver,cartbtn);
         click(driver,cartbtn);
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(topcartcheckoutbutton));
+        fluentWait(driver,topcartcheckoutbutton);
         click(driver,topcartcheckoutbutton);
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(nextbtn));
+        fluentWait(driver,nextbtn);
         click(driver,nextbtn);
 
         Actions actions = new Actions(driver);
-        wait.until(ExpectedConditions.elementToBeClickable(placeorderbtn));
+        fluentWait(driver,placeorderbtn);
         actions.moveToElement(driver.findElement(placeorderbtn)).perform();
+
         click(driver,placeorderbtn);
-        wait.until((ExpectedConditions.presenceOfElementLocated(thankstatus)));
+        fluentWait(driver,thankstatus);
 
     }
 

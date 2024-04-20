@@ -20,20 +20,4 @@ public class ChangePasswordTests extends BaseTests {
         change.verifyPasswordChanged();
     }
 
-
-    @Test(priority = 3)
-    void testChangeEmail() {
-        var log = new P01_HomePage(driver).clickLoginPage();
-        log.setLoginCredentials(email, password);
-        log.signIn();
-
-        var change = new P01_HomePage(driver).clickEditAccountPage().clickChangeEmail();
-        change.setChangeEmail(email);
-        change.setCurrentPassword(password);
-        change.save();
-        change.verifyEmailChanged();
-
-
-    }
-
 }

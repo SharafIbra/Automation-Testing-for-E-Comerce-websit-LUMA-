@@ -19,27 +19,31 @@ public class P03_LoginPage extends basePage {
     }
 
     @Step("Login with email: {0} & password: {1}")
-    public void setLoginCredentials(String Email, String Password) {
+    public P03_LoginPage setLoginCredentials(String Email, String Password) {
         sendKeys(driver,email, Email);
         sendKeys(driver,password, Password);
+        return this;
     }
 
     @Step("Click sign in ")
-    public void signIn() {
+    public P03_LoginPage signIn() {
         click(driver,signin);
+        return this;
     }
 
 
-    public void verifySignINIs_Ok() {
+    public P03_LoginPage verifySignINIs_Ok() {
         String expectedURL = "https://magento.softwaretestingboard.com/";
         String actualURL = driver.getCurrentUrl();
         assertEquals(actualURL, expectedURL);
+        return this;
     }
 
-    public void VerifySignINIs_incorrect() {
+    public P03_LoginPage VerifySignINIs_incorrect() {
         String expectedURL = "https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/";
         String actualURL = driver.getCurrentUrl();
         assertEquals(actualURL, expectedURL);
+        return this;
     }
 
 

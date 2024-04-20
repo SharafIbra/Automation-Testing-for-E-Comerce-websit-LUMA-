@@ -15,8 +15,7 @@ public class CheckoutCartItemsTests extends BaseTests {
         log.setLoginCredentials(email, password);
         log.signIn();
 
-        var aitsc = new P01_HomePage(driver).clickAddItemsToShoppingCart();
-        var aitsc_wn = aitsc.clickNavigation_Men_Top_Jackets_AddItem();
+        var aitsc_wn = new P01_HomePage(driver).clickAddItemsToShoppingCart().clickNavigation_Men_Top_Jackets_AddItem();
 
         aitsc_wn.NavigationBar_addMultiItem_Men_Jackets(MenProduct);
         aitsc_wn.selectQuantity("2");
@@ -25,7 +24,7 @@ public class CheckoutCartItemsTests extends BaseTests {
         aitsc_wn.submitProductToCart();
 
         var checkout = new P01_HomePage(driver).clickCheckoutCartItems();
-        checkout.checkoutItemInCart();
+        checkout.checkOutItemInCart();
         String actualStatus = checkout.getCurrentURL(driver);
         /*String expectedStatus = "Thank you for your purchase!";*/
 
