@@ -17,12 +17,12 @@ public class P04_ResetPassword extends basePage {
     }
 
     public P04_ResetPassword enterEmail(String Email) {
-        sendKeys(driver,email, Email);
+        sendKeys(driver, email, Email);
         return this;
     }
 
     public P04_ResetPassword clickResetMyPassword() {
-        click(driver,resetmypassword);
+        click(driver, resetmypassword);
         return this;
     }
 

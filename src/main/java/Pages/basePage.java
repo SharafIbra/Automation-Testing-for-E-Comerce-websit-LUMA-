@@ -12,12 +12,11 @@ import java.time.Duration;
 public class basePage {
 
 
-
-    protected void sendKeys(WebDriver driver,By byObject, String data) {
+    protected void sendKeys(WebDriver driver, By byObject, String data) {
         driver.findElement(byObject).sendKeys(data);
     }
 
-    protected void click(WebDriver driver,By byObject) {
+    protected void click(WebDriver driver, By byObject) {
         driver.findElement(byObject).click();
     }
 
@@ -25,11 +24,11 @@ public class basePage {
         return driver.getCurrentUrl();
     }
 
-    protected String getText(WebDriver driver,By byObject) {
+    protected String getText(WebDriver driver, By byObject) {
         return driver.findElement(byObject).getText();
     }
 
-    protected void clear(WebDriver driver,By byObject) {
+    protected void clear(WebDriver driver, By byObject) {
         driver.findElement(byObject).clear();
     }
 
@@ -40,15 +39,14 @@ public class basePage {
     public static WebDriverWait shortWait(WebDriver driver) {
         return new WebDriverWait(driver, Duration.ofSeconds(10));
     }
+
     @SuppressWarnings("unchecked")
-    protected void fluentWait (WebDriver driver , By byObject){
+    protected void fluentWait(WebDriver driver, By byObject) {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10))
-            .pollingEvery(Duration.ofSeconds(2))
-            .ignoring(NoSuchElementException.class);
+                .pollingEvery(Duration.ofSeconds(2))
+                .ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(byObject));
-    };
-
-
+    }
 
 
 }

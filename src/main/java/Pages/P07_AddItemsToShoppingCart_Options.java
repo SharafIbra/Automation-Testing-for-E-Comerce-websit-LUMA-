@@ -1,13 +1,8 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-
-import java.time.Duration;
 
 @SuppressWarnings("ALL")
 public class P07_AddItemsToShoppingCart_Options extends basePage {
@@ -29,22 +24,22 @@ public class P07_AddItemsToShoppingCart_Options extends basePage {
 
     public P07_AddItemsToShoppingCart_Functions clickWhatIsNew_NewInWomen_HoodiesSweatshirts_AddItem() {
 
-        fluentWait(driver,whatisnewbutton);
+        fluentWait(driver, whatisnewbutton);
 
-        click(driver,whatisnewbutton);
+        click(driver, whatisnewbutton);
 
-        click(driver,hoodiessweatshirts_women___whatsnew);
+        click(driver, hoodiessweatshirts_women___whatsnew);
         return new P07_AddItemsToShoppingCart_Functions(driver);
     }
 
 
     public P07_AddItemsToShoppingCart_Functions clickWhatIsNew_NewInWomen_HoodiesSweatshirts_AddItem___modified() {
 
-        fluentWait(driver,whatisnewbutton);
+        fluentWait(driver, whatisnewbutton);
 
-        click(driver,whatisnewbutton);
+        click(driver, whatisnewbutton);
 
-        click(driver,hoodiessweatshirts_women___whatsnew);
+        click(driver, hoodiessweatshirts_women___whatsnew);
         return new P07_AddItemsToShoppingCart_Functions(driver);
     }
 
@@ -53,16 +48,16 @@ public class P07_AddItemsToShoppingCart_Options extends basePage {
 
         Actions actions = new Actions(driver);
 
-        fluentWait(driver,mennavigation);
+        fluentWait(driver, mennavigation);
         actions.moveToElement(driver.findElement(mennavigation)).perform();
 
-        fluentWait(driver,mentops);
+        fluentWait(driver, mentops);
         actions.moveToElement(driver.findElement(mentops)).perform();
 
-        fluentWait(driver,mentopsjackets);
+        fluentWait(driver, mentopsjackets);
         actions.moveToElement(driver.findElement(mentopsjackets)).perform();
 
-        click(driver,mentopsjackets);
+        click(driver, mentopsjackets);
 
         return new P07_AddItemsToShoppingCart_Functions(driver);
     }

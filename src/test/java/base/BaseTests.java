@@ -1,13 +1,7 @@
 package base;
 
-import Pages.P01_HomePage;
 import drivers.DriverFactory;
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 import java.io.FileInputStream;
@@ -20,7 +14,7 @@ public class BaseTests extends testData {
     private static String PROJECT_NAME = null;
     private static String PROJECT_URL = null;
     static Properties prop;
-    static FileInputStream readProperty;
+    static FileInputStream readProperty_File;
 
     protected WebDriver driver;
 
@@ -32,10 +26,10 @@ public class BaseTests extends testData {
 
     private void setProjectDetails() throws IOException, IOException {
         // TODO: Step1: define object of properties file
-        readProperty = new FileInputStream(
+        readProperty_File = new FileInputStream(
                 System.getProperty("user.dir") + "/src/main/resources/properties/env.properties");
         prop = new Properties();
-        prop.load(readProperty);
+        prop.load(readProperty_File);
 
         // define project name from properties file
         PROJECT_NAME = prop.getProperty("projectName");

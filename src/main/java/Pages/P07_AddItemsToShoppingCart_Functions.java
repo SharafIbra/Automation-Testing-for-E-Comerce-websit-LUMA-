@@ -1,12 +1,7 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-
-import java.time.Duration;
 
 @SuppressWarnings("ALL")
 public class P07_AddItemsToShoppingCart_Functions extends basePage {
@@ -27,28 +22,25 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         By addtocartbutton = new By.ByXPath(xpath_addtocartbutton);
 
 
-        fluentWait(driver,addtocartbutton);
+        fluentWait(driver, addtocartbutton);
 
 
-        click(driver,addtocartbutton);
+        click(driver, addtocartbutton);
         return this;
     }
+
     public P07_AddItemsToShoppingCart_Functions NavigationBar_addMultiItem_Men_Jackets(String productName) {
         //a[normalize-space()='Circe Hooded Ice Fleece']
         String xpath_addtocartbutton = "//a[normalize-space()='" + productName + "']";
         By addtocartbutton = new By.ByXPath(xpath_addtocartbutton);
 
 
-        fluentWait(driver,addtocartbutton);
+        fluentWait(driver, addtocartbutton);
 
 
-        click(driver,addtocartbutton);
+        click(driver, addtocartbutton);
         return this;
     }
-
-
-
-
 
 
     /**
@@ -59,8 +51,8 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
         String xpath_size = "option-label-size-143-item-" + (166 + sizeNum);
         By size = new By.ById(xpath_size);
 
-        fluentWait(driver,size);
-        click(driver,size);
+        fluentWait(driver, size);
+        click(driver, size);
 
         return this;
     }
@@ -85,27 +77,27 @@ public class P07_AddItemsToShoppingCart_Functions extends basePage {
 
         By colour = new By.ById(xpath_colour);
 
-        click(driver,colour);
+        click(driver, colour);
         return this;
     }
 
     public P07_AddItemsToShoppingCart_Functions selectQuantity(String Quantity) {
-        fluentWait(driver,quantity);
-        clear(driver,quantity);
-        sendKeys(driver,quantity, Quantity);
+        fluentWait(driver, quantity);
+        clear(driver, quantity);
+        sendKeys(driver, quantity, Quantity);
         return this;
     }
 
     public P07_AddItemsToShoppingCart_Functions submitProductToCart() {
-        click(driver,addtocartbutton_f);
+        click(driver, addtocartbutton_f);
         /*return driver.findElement(nameofproduct).getText();*/
         return this;
     }
 
     public String verifyItemAddedToCart() {
-        fluentWait(driver,status);
+        fluentWait(driver, status);
 
-        return getText(driver,status);
+        return getText(driver, status);
     }
 
 

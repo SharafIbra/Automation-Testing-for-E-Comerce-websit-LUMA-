@@ -18,22 +18,22 @@ public class P04_ChangePassword extends basePage {
     }
 
     public P04_ChangePassword setCurrentPassword(String currentPassword) {
-        sendKeys(driver,currentpassword, currentPassword);
+        sendKeys(driver, currentpassword, currentPassword);
         return this;
     }
 
     public P04_ChangePassword setNewPassword(String newPassword) {
-        sendKeys(driver,newpassword, newPassword);
+        sendKeys(driver, newpassword, newPassword);
         return this;
     }
 
     public P04_ChangePassword setConfirmNewPassword(String confirmNewPassword) {
-        sendKeys(driver,confirmnewpassword, confirmNewPassword);
+        sendKeys(driver, confirmnewpassword, confirmNewPassword);
         return this;
     }
 
     public P04_ChangePassword save() {
-        click(driver,savebutton);
+        click(driver, savebutton);
         return this;
     }
 

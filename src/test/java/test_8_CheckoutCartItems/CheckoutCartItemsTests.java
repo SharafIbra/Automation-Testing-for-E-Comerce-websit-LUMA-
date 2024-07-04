@@ -19,22 +19,28 @@ public class CheckoutCartItemsTests extends BaseTests {
                 .setLoginCredentials(email, password)
                 .signIn();
 
-        new P01_HomePage(driver).clickAddItemsToShoppingCart().clickNavigation_Men_Top_Jackets_AddItem();
 
-        new P07_AddItemsToShoppingCart_Functions(driver).NavigationBar_addMultiItem_Men_Jackets(MenProduct)
-                .selectQuantity("2")
-                .selectSize(1)
-                .selectColour("Green")
-                .submitProductToCart();
+        if(!new P08_CheckoutCartItems(driver).validateIfCartContainProducts()) {
+            new P01_HomePage(driver).clickAddItemsToShoppingCart().clickNavigation_Men_Top_Jackets_AddItem();
+            new P07_AddItemsToShoppingCart_Functions(driver).NavigationBar_addMultiItem_Men_Jackets(MenProduct)
+                    .selectQuantity("2")
+                    .selectSize(1)
+                    .selectColour("Green")
+                    .submitProductToCart();
+        }
 
-        new P01_HomePage(driver).clickCheckoutCartItems();
-        new P08_CheckoutCartItems(driver).checkOutItemInCart();
 
-        String actualStatus = new P08_CheckoutCartItems(driver).getCurrentURL(driver);
-        /*String expectedStatus = "Thank you for your purchase!";*/
+            new P01_HomePage(driver).clickCheckoutCartItems();
+            new P08_CheckoutCartItems(driver).checkOutItemInCart()
+                    .validateOrderPlacedSuccessfully();
+
+
+
+        /*String actualStatus = new P08_CheckoutCartItems(driver).getCurrentURL(driver);
+        *//*String expectedStatus = "Thank you for your purchase!";*//*
 
         assertTrue(actualStatus.contains("success"), "No item is purchased");
-
+*/
     }
 
 }

@@ -21,37 +21,35 @@ public class P04and5_EditAccountInformation___pages extends basePage {
     }
 
     public P04_ChangePassword clickChangePassword() {
-        fluentWait(driver,myacountdropdownbutton);
-        click(driver,myacountdropdownbutton);
+        fluentWait(driver, myacountdropdownbutton);
+        click(driver, myacountdropdownbutton);
 
-        fluentWait(driver,myacount);
-        click(driver,myacount);
-        click(driver,changepassword);
+        fluentWait(driver, myacount);
+        click(driver, myacount);
+        click(driver, changepassword);
         return new P04_ChangePassword(driver);
     }
 
     public P04_ChangeEmail clickChangeEmail() {
-        fluentWait(driver,myacountdropdownbutton);
-        click(driver,myacountdropdownbutton);
+        fluentWait(driver, myacountdropdownbutton);
+        click(driver, myacountdropdownbutton);
 
-        fluentWait(driver,myacount);
-        click(driver,myacount);
-        click(driver,edit);
+        fluentWait(driver, myacount);
+        click(driver, myacount);
+        click(driver, edit);
         return new P04_ChangeEmail(driver);
     }
 
     public P05_AddDefaultAddresses clickAddDefaultAddresses() {
-        fluentWait(driver,myacountdropdownbutton);
-        click(driver,myacountdropdownbutton);
+        fluentWait(driver, myacountdropdownbutton);
+        click(driver, myacountdropdownbutton);
 
-        fluentWait(driver,myacount);
-        click(driver,myacount);
+        fluentWait(driver, myacount);
+        click(driver, myacount);
 
         click(driver, manageaddressesFirstaddesss);
         return new P05_AddDefaultAddresses(driver);
     }
-
-
 
 
 }

@@ -23,7 +23,8 @@ public class LoginPageTests extends BaseTests {
         new P03_LoginPage(driver)
                 .setLoginCredentials(email, password)
                 .signIn()
-                .verifySignINIs_Ok();
+                .verifySignINIs_InValid()
+                .verifySignIs_InValid();
     }
 
 

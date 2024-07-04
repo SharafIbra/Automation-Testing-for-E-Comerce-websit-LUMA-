@@ -1,13 +1,8 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-
-import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
 
@@ -36,24 +31,24 @@ public class P05_AddDefaultAddresses extends basePage {
     }
 
     public P05_AddDefaultAddresses setContactInformation(String FirstName, String LastName, String Company, String PhoneNumber) {
-        clear(driver,firstname);
-        sendKeys(driver,firstname, FirstName);
-        clear(driver,lastname);
-        sendKeys(driver,lastname, LastName);
-        sendKeys(driver,company, Company);
-        sendKeys(driver,telephone, PhoneNumber);
+        clear(driver, firstname);
+        sendKeys(driver, firstname, FirstName);
+        clear(driver, lastname);
+        sendKeys(driver, lastname, LastName);
+        sendKeys(driver, company, Company);
+        sendKeys(driver, telephone, PhoneNumber);
         return this;
     }
 
     public P05_AddDefaultAddresses setStreetAddress(String Address1, String Address2, String Address3) {
-        sendKeys(driver,street_1, Address1);
-        sendKeys(driver,street_2, Address2);
-        sendKeys(driver,street_3, Address3);
+        sendKeys(driver, street_1, Address1);
+        sendKeys(driver, street_2, Address2);
+        sendKeys(driver, street_3, Address3);
         return this;
     }
 
     public P05_AddDefaultAddresses setCity(String City) {
-        sendKeys(driver,city, City);
+        sendKeys(driver, city, City);
         return this;
     }
 
@@ -64,12 +59,12 @@ public class P05_AddDefaultAddresses extends basePage {
     }
 
     public P05_AddDefaultAddresses setState(String State) {
-        sendKeys(driver,state, State);
+        sendKeys(driver, state, State);
         return this;
     }
 
     public P05_AddDefaultAddresses setPostalCode(String PostalCode) {
-        sendKeys(driver,postalcode, PostalCode);
+        sendKeys(driver, postalcode, PostalCode);
         return this;
     }
 
@@ -80,12 +75,12 @@ public class P05_AddDefaultAddresses extends basePage {
     }
 
     public P05_AddDefaultAddresses saveAddress() {
-        click(driver,saveaddress);
+        click(driver, saveaddress);
         return this;
     }
 
     public P05_AddDefaultAddresses verifyAddressAdded() {
-        fluentWait(driver,status);
+        fluentWait(driver, status);
 
 
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/address/index/";

@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class testData {
 
-    private final int userNumber = 2;
+    private final int userNumber = 1;
     private final int addressNumber = 1;
 
     {
@@ -69,15 +69,20 @@ public class testData {
         setCountry(country);
         setWomenProduct(WomenProduct);
         setMenProduct(MenProduct);
-    }    protected String firstname = getFirstname();
+    }
 
     private String getFirstname() {
         return firstname;
-    }    protected String lastname = getLastname();
+    }
 
     private void setFirstname(String firstname) {
         this.firstname = firstname;
-    }    protected String email = getEmail();
+    }
+    protected String firstname = getFirstname();
+
+      protected String lastname = getLastname();
+
+       protected String email = getEmail();
 
     private String getLastname() {
         return lastname;

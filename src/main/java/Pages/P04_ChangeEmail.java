@@ -18,23 +18,23 @@ public class P04_ChangeEmail extends basePage {
     }
 
     public P04_ChangeEmail setChangeEmail(String Email) {
-        click(driver,changeemail);
-        clear(driver,email);
-        sendKeys(driver,email, Email);
+        click(driver, changeemail);
+        clear(driver, email);
+        sendKeys(driver, email, Email);
         return this;
     }
 
     public P04_ChangeEmail setCurrentPassword(String Password) {
-        sendKeys(driver,currentpassword, Password);
+        sendKeys(driver, currentpassword, Password);
         return this;
     }
 
     public String getStatus() {
-        return getText(driver,status);
+        return getText(driver, status);
     }
 
     public P04_ChangeEmail save() {
-        click(driver,savebutton);
+        click(driver, savebutton);
         return this;
     }
 
@@ -44,8 +44,6 @@ public class P04_ChangeEmail extends basePage {
         assertEquals(actualStatus, expectedStatus, "Password not changed");
         return this;
     }
-
-
 
 
 }
