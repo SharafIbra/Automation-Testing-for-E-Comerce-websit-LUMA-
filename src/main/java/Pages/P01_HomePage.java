@@ -3,8 +3,9 @@ package Pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utilsFiles.Utils;
 
-public class P01_HomePage extends basePage {
+public class P01_HomePage extends Utils {
     WebDriver driver;
     private final By createAccount = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
     private final By signIn = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a");
@@ -12,6 +13,11 @@ public class P01_HomePage extends basePage {
 
     public P01_HomePage(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public P01_HomePage refreshHomePage(){
+        refreshPage(driver);
+        return new P01_HomePage(driver);
     }
 
     @Step("Click Create account button in home page to create new user account")

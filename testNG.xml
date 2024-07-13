@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
 
-    <parameter name="browser" value="chrome-headless" />
+    <parameter name="browser" value="chrome" />
     <suite-files>
         <!--<suite-file path="testNG_LoginScenarios.xml"/>-->
-        <suite-file path="testNG_AllScenarios.xml"/>
+        <suite-file path="testNG_CreateUser_And_SaveCookies.xml"/>
         <!-- <suite-file path="loginNegativeScenario.xml"/>  -->
     </suite-files>
 

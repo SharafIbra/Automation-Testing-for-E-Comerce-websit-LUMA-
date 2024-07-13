@@ -3,9 +3,10 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import utilsFiles.Utils;
 
 @SuppressWarnings("ALL")
-public class P07_AddItemsToShoppingCart_Options extends basePage {
+public class P07_AddItemsToShoppingCart_Options extends Utils {
     WebDriver driver;
     private final By whatisnewbutton = new By.ByCssSelector("#ui-id-2 > li.level0.nav-1.category-item.first.level-top.ui-menu-item");
 

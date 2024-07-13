@@ -14,7 +14,9 @@ public class LoginPageTests extends BaseTests {
                 .setLoginCredentials(email, password)
                 .signIn()
                 .verifySignINIs_Ok();
+
     }
+
 
     @Test(priority = 2, description = "Invalid Login Scenario with wrong username and password")
     public void testLoginInValidCredentials() {
@@ -26,6 +28,17 @@ public class LoginPageTests extends BaseTests {
                 .verifySignINIs_InValid()
                 .verifySignIs_InValid();
     }
+
+    @Test(priority = 1, description = "Valid Login Scenario By inject Cookies file")
+    public void testLoginExistingUserByInjectCookies() {
+
+        new P03_LoginPage(driver)
+                .BypassLogin()
+                .verifySignINIs_Ok();
+
+    }
+
+
 
 
 }

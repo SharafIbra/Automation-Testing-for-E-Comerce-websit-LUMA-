@@ -3,12 +3,14 @@ package Pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utilsFiles.Utils;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static utilsFiles.Cookies.storeCookiesToFile;
 
 
-public class P02_createAccountPage extends basePage {
+public class P02_createAccountPage extends Utils {
     WebDriver driver;
     private final By firstname = new By.ById("firstname");
     private final By lastname = new By.ById("lastname");
@@ -71,6 +73,12 @@ public class P02_createAccountPage extends basePage {
         String actualStatus = driver.findElement(status).getText();
         System.out.println(actualStatus);
         assertTrue(actualStatus.contains(expectedStatus), "account not created");
+        return this;
+    }
+
+    public P02_createAccountPage getUserTokenAndCookies(){
+        // Store cookies in a file
+        storeCookiesToFile(driver, "LoginCookies.txt");
         return this;
     }
 

@@ -7,12 +7,17 @@ import org.testng.annotations.Test;
 
 public class CreateAccountPageTests extends BaseTests {
     @Test
-    public void testCreateAccount() {
+    public void testCreateAccountAndSaveUserCookies() {
         new P01_HomePage(driver).clickCreateAccountPage();
         new P02_createAccountPage(driver).setPersonalInformation(firstname, lastname)
                 .setSignInInformation(email, password, confirm_password)
                 .create_account()
-                .verifyPageURL();
+                .verifyPageURL()
+                .getUserTokenAndCookies();
+
+
+
+
     }
 
     @Test(description = "verify that there is already an account with this email address")
@@ -23,4 +28,9 @@ public class CreateAccountPageTests extends BaseTests {
                 .create_account()
                 .verifyEmailIsRegisteredBefore();
     }
+
+
+
+
+
 }

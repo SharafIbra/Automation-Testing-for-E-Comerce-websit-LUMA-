@@ -3,10 +3,11 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import utilsFiles.Utils;
 
 import static org.testng.Assert.assertEquals;
 
-public class P05_AddDefaultAddresses extends basePage {
+public class P05_AddDefaultAddresses extends Utils {
     WebDriver driver;
 
 

@@ -3,11 +3,13 @@ package Pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utilsFiles.Cookies;
+import utilsFiles.Utils;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class P03_LoginPage extends basePage {
+public class P03_LoginPage extends Utils {
     WebDriver driver;
 
     private final By email = new By.ById("email");
@@ -59,5 +61,14 @@ public class P03_LoginPage extends basePage {
         return this;
     }
 
+
+    public P03_LoginPage BypassLogin() {
+
+
+        Cookies.loadCookiesFromFile(driver,"LoginCookies.txt");
+        refreshPage(driver);
+
+        return this;
+    }
 
 }

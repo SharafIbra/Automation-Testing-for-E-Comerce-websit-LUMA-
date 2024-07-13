@@ -10,8 +10,8 @@ import java.io.IOException;
 
 public class testData {
 
-    private final int userNumber = 1;
-    private final int addressNumber = 1;
+    private final int userNumber = 3;
+    private final int addressNumber = 2;
 
     {
         JSONParser jsonParser = new JSONParser();

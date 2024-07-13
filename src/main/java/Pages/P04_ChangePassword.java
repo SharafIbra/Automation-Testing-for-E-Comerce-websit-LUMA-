@@ -2,10 +2,11 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utilsFiles.Utils;
 
 import static org.testng.Assert.assertEquals;
 
-public class P04_ChangePassword extends basePage {
+public class P04_ChangePassword extends Utils {
     WebDriver driver;
 
     private final By currentpassword = new By.ById("current-password");

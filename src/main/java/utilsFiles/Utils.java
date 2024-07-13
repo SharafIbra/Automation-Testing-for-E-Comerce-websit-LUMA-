@@ -1,4 +1,4 @@
-package Pages;
+package utilsFiles;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -9,7 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class basePage {
+
+public class Utils {
 
 
     protected void sendKeys(WebDriver driver, By byObject, String data) {
@@ -46,6 +47,11 @@ public class basePage {
                 .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.presenceOfElementLocated(byObject));
+    }
+
+
+    protected void refreshPage(WebDriver driver){
+        driver.navigate().refresh();
     }
 
 

@@ -1,11 +1,11 @@
 package base;
 
 import drivers.DriverFactory;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 import static drivers.DriverHolder.setDriver;
@@ -44,6 +44,16 @@ public class BaseTests extends testData {
         setDriver(driver);
         driver.get(PROJECT_URL);
         /*driver.get("https://magento.softwaretestingboard.com/");*/
+
+
+
+
+        /**/
+
+     /**/
+
+
+
     }
 
     @AfterTest
