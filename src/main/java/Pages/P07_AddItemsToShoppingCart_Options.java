@@ -47,6 +47,7 @@ public class P07_AddItemsToShoppingCart_Options extends UtilsDriverMethods {
 
     public P07_AddItemsToShoppingCart_Functions clickNavigation_Men_Top_Jackets_AddItem() {
 
+
         Actions actions = new Actions(driver);
 
         fluentWait(driver, mennavigation);
@@ -62,6 +63,8 @@ public class P07_AddItemsToShoppingCart_Options extends UtilsDriverMethods {
 
         return new P07_AddItemsToShoppingCart_Functions(driver);
     }
+
+
 
 
 }

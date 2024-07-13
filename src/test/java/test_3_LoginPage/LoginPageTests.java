@@ -7,13 +7,14 @@ import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTests {
 
-    @Test(priority = 1, description = "Valid Login Scenario with valid username and password")
+    @Test(priority = 1, description = "Valid Login Scenario with valid username and password and save session's cookies")
     public void testLoginValidCredentials() {
         new P01_HomePage(driver).clickLoginPage();
         new P03_LoginPage(driver)
                 .setLoginCredentials(email, password)
                 .signIn()
-                .verifySignINIs_Ok();
+                .verifySignINIs_Ok()
+                .store_Cookies_Login_Page();
 
     }
 
@@ -29,11 +30,13 @@ public class LoginPageTests extends BaseTests {
                 .verifySignIs_InValid();
     }
 
+
+
     @Test(priority = 1, description = "Valid Login Scenario By inject Cookies file")
     public void testLoginExistingUserByInjectCookies() {
 
         new P03_LoginPage(driver)
-                .BypassLogin()
+                .load_Cookies_Login_Page()
                 .verifySignINIs_Ok();
 
     }

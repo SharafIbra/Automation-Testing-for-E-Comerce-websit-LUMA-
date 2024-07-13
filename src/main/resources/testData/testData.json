@@ -48,5 +48,6 @@
   "state": "new state",
   "postalcode": "33366",
   "WomenProduct": "Circe Hooded Ice Fleece",
-  "MenProduct": "Montana Wind Jacket"
+  "MenProduct_jacket": "Montana Wind Jacket",
+  "MenProduct_pant": "Cronus Yoga Pant"
 }

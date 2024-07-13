@@ -42,7 +42,8 @@ public class testData {
         String postalcode = (String) jasonO_AllData.get("postalcode");
         String country = (String) jasonO_AllData.get("country");
         String WomenProduct = (String) jasonO_AllData.get("WomenProduct");
-        String MenProduct = (String) jasonO_AllData.get("MenProduct");
+        String MenProduct_jacket = (String) jasonO_AllData.get("MenProduct_jacket");
+        String MenProduct_pant = (String) jasonO_AllData.get("MenProduct_pant");
 
 
         JSONArray array_address = (JSONArray) jasonO_AllData.get("Addresses");
@@ -68,7 +69,8 @@ public class testData {
         setPostalcode(postalcode);
         setCountry(country);
         setWomenProduct(WomenProduct);
-        setMenProduct(MenProduct);
+        setMenProduct_jacket(MenProduct_jacket);
+        setMenProduct_pant(MenProduct_pant);
     }
 
     private String getFirstname() {
@@ -134,7 +136,9 @@ public class testData {
 
     private String getAddress1() {
         return address1;
-    }    protected String MenProduct = getMenProduct();
+    }
+    protected String MenProduct_jacket = getMenProduct_jacket();
+    protected String MenProduct_pant = getMenProduct_pant();
 
     private void setAddress1(String address1) {
         this.address1 = address1;
@@ -197,14 +201,21 @@ public class testData {
         this.WomenProduct = WomenProduct;
     }
 
-    public String getMenProduct() {
-        return MenProduct;
+    public String getMenProduct_jacket() {
+        return MenProduct_jacket;
     }
 
-    private void setMenProduct(String menProduct) {
-        MenProduct = menProduct;
+    private void setMenProduct_jacket(String menProduct_jacket) {
+        this.MenProduct_jacket = menProduct_jacket;
     }
 
+    public String getMenProduct_pant() {
+        return MenProduct_pant;
+    }
+
+    private void setMenProduct_pant(String menProduct_pant) {
+        this.MenProduct_pant = MenProduct_pant;
+    }
 
 
 

@@ -7,7 +7,7 @@ import utilsFiles.UtilsDriverMethods;
 
 import static org.testng.Assert.assertEquals;
 
-public class P05_AddDefaultAddresses extends UtilsDriverMethods {
+public class P05_AddAddresses extends UtilsDriverMethods {
     WebDriver driver;
 
 
@@ -27,11 +27,11 @@ public class P05_AddDefaultAddresses extends UtilsDriverMethods {
     private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
     private final By addnewaddresses = new By.ByXPath("//*[@id=\"maincontent\"]/div[2]/div[1]/div[6]/div[1]/button");
 
-    public P05_AddDefaultAddresses(WebDriver driver) {
+    public P05_AddAddresses(WebDriver driver) {
         this.driver = driver;
     }
 
-    public P05_AddDefaultAddresses setContactInformation(String FirstName, String LastName, String Company, String PhoneNumber) {
+    public P05_AddAddresses setContactInformation(String FirstName, String LastName, String Company, String PhoneNumber) {
         clear(driver, firstname);
         sendKeys(driver, firstname, FirstName);
         clear(driver, lastname);
@@ -41,46 +41,46 @@ public class P05_AddDefaultAddresses extends UtilsDriverMethods {
         return this;
     }
 
-    public P05_AddDefaultAddresses setStreetAddress(String Address1, String Address2, String Address3) {
+    public P05_AddAddresses setStreetAddress(String Address1, String Address2, String Address3) {
         sendKeys(driver, street_1, Address1);
         sendKeys(driver, street_2, Address2);
         sendKeys(driver, street_3, Address3);
         return this;
     }
 
-    public P05_AddDefaultAddresses setCity(String City) {
+    public P05_AddAddresses setCity(String City) {
         sendKeys(driver, city, City);
         return this;
     }
 
-    public P05_AddDefaultAddresses setState_DROPDOWN(String State) {
+    public P05_AddAddresses setState_DROPDOWN(String State) {
         Select select = new Select(driver.findElement(statedropdown));
         select.selectByVisibleText(State);
         return this;
     }
 
-    public P05_AddDefaultAddresses setState(String State) {
+    public P05_AddAddresses setState(String State) {
         sendKeys(driver, state, State);
         return this;
     }
 
-    public P05_AddDefaultAddresses setPostalCode(String PostalCode) {
+    public P05_AddAddresses setPostalCode(String PostalCode) {
         sendKeys(driver, postalcode, PostalCode);
         return this;
     }
 
-    public P05_AddDefaultAddresses setCountrydropdown(String Country) {
+    public P05_AddAddresses setCountrydropdown(String Country) {
         Select select = new Select(driver.findElement(countrydropdown));
         select.selectByVisibleText(Country);
         return this;
     }
 
-    public P05_AddDefaultAddresses saveAddress() {
+    public P05_AddAddresses saveAddress() {
         click(driver, saveaddress);
         return this;
     }
 
-    public P05_AddDefaultAddresses verifyAddressAdded() {
+    public P05_AddAddresses verifyAddressAdded() {
         fluentWait(driver, status);
 
 
@@ -89,6 +89,12 @@ public class P05_AddDefaultAddresses extends UtilsDriverMethods {
         assertEquals(actualStatus, expectedStatus, "Address not saved");
         return this;
     }
+
+
+
+
+
+
 
 
 }

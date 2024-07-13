@@ -102,14 +102,8 @@ public class P07_AddItemsToShoppingCart_Functions extends UtilsDriverMethods {
     }
 
 
+
+
+
 }
-/*
-//a[normalize-space()='Circe Hooded Ice Fleece']
-//a[normalize-space()='Eos V-Neck Hoodie']
-
-/html[1]/body[1]/div[2]/main[1]/div[3]/div[1]/div[4]/ol[1]/li[=====]/div[1]/div[1]/strong[1]/a[1]
-/html[1]/body[1]/div[2]/main[1]/div[3]/div[1]/div[4]/ol[1]/li[2]/div[1]/div[1]/strong[1]/a[1]
-
-
-* */
 

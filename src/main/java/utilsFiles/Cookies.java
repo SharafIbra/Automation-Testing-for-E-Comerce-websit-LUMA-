@@ -23,6 +23,25 @@ public class Cookies {
     }
 
     public static Set<Cookie> loadCookiesFromFile(WebDriver driver, String filename) {
+        try (FileInputStream fileIn = new FileInputStream(filename);
+             ObjectInputStream objectIn = new ObjectInputStream(fileIn)) {
+            Set<Cookie> loadedCookies = (Set<Cookie>) objectIn.readObject();
+
+            // Add the loaded cookies to the new browser session
+            assert loadedCookies != null;
+            for (Cookie cookie : loadedCookies) {
+                driver.manage().addCookie(cookie);
+            }
+
+            return loadedCookies;
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    /*public static Set<Cookie> loadCookiesFromFile(WebDriver driver, String filename) {
         Set<Cookie> loadedCookies = readCookiesFromFile(filename);
 
         // Add the loaded cookies to the new browser session
@@ -41,8 +60,6 @@ public class Cookies {
     }
 
 
-
-
     private static Set<Cookie> readCookiesFromFile(String filename) {
         try (FileInputStream fileIn = new FileInputStream(filename);
              ObjectInputStream objectIn = new ObjectInputStream(fileIn)) {
@@ -51,5 +68,5 @@ public class Cookies {
             e.printStackTrace();
             return null;
         }
-    }
+    }*/
 }

@@ -11,7 +11,7 @@
 	<test name="Run on Chrome" preserve-order="true">
 		<parameter name="browser" value="Chrome" />
 		<classes>
-			<class name="test_7_AddItemsToShoppingCart.PurchasesOrder_WhatIsNew" />
+			<class name="test_7_AddItemsToShoppingCart.PurchasesOrder_WhatIsNew_ByAnonymousUser" />
 			<class name="test_5_EditAccountAddresses.EditAccountAddressesTests" />
 		</classes>
 	</test>

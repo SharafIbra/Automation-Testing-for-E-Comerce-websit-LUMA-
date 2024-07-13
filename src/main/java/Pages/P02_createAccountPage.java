@@ -78,7 +78,7 @@ public class P02_createAccountPage extends UtilsDriverMethods {
 
     public P02_createAccountPage getUserTokenAndCookies(){
         // Store cookies in a file
-        storeCookiesToFile(driver, "LoginCookies.txt");
+        storeCookiesToFile(driver, "LoginCookies");
         return this;
     }
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="LUMA Test Suite" >
-	<test name="test login1" >
+	<test name="test login with UserNAme and password" >
 		<classes>
-			<class name="test_2_CreateAccountPage.CreateAccountPageTests" >
+			<class name="test_3_LoginPage.LoginPageTests" >
 			<methods>
 				<include name= "testLoginValidCredentials"/>
 			</methods>
 			</class>
 		</classes>
 	</test>
-	<test name="test login2" >
+	<test name="test login By inject cookies" >
 
 		<classes>
 			<class name="test_3_LoginPage.LoginPageTests" >

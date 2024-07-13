@@ -17,4 +17,19 @@ public class SearchProductTests extends BaseTests {
         String actualstatus = new P06_SearchProduct(driver).getStatus();
         assertTrue(actualstatus.contains(product), "test False");
     }
+
+
+    @Test(description = "")
+    void testSearchProductRegisteredUser() {
+
+        String product = "shirts";
+        new P01_HomePage(driver)
+                .bypassLoginHomepage()
+                .clickSearchProduct();
+        new P06_SearchProduct(driver).enterProductName(product);
+        String actualstatus = new P06_SearchProduct(driver).getStatus();
+        assertTrue(actualstatus.contains(product), "test False");
+    }
+
+
 }

@@ -33,10 +33,16 @@ public class P01_HomePage extends UtilsDriverMethods {
         return new P03_LoginPage(driver);
     }
 
-    public P04_ResetPassword clickForgetPasswordPage() {
+    @Step("Bypass login ")
+    public P01_HomePage bypassLoginHomepage() {
+        new P03_LoginPage(driver).load_Cookies_Login_Page();
+        return new P01_HomePage(driver);
+    }
+
+    public void clickForgetPasswordPage() {
         click(driver, signIn);
         click(driver, forgetPassword);
-        return new P04_ResetPassword(driver);
+        new P04_ResetPassword(driver);
     }
 
     public P04and5_EditAccountInformation___pages clickEditAccountPage() {
@@ -55,6 +61,8 @@ public class P01_HomePage extends UtilsDriverMethods {
     public P08_CheckoutCartItems clickCheckoutCartItems() {
         return new P08_CheckoutCartItems(driver);
     }
+
+
 
 
 }

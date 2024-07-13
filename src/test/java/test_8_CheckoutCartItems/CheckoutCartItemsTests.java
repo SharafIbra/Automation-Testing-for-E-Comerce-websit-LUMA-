@@ -22,7 +22,7 @@ public class CheckoutCartItemsTests extends BaseTests {
 
         if(!new P08_CheckoutCartItems(driver).validateIfCartContainProducts()) {
             new P01_HomePage(driver).clickAddItemsToShoppingCart().clickNavigation_Men_Top_Jackets_AddItem();
-            new P07_AddItemsToShoppingCart_Functions(driver).NavigationBar_addMultiItem_Men_Jackets(MenProduct)
+            new P07_AddItemsToShoppingCart_Functions(driver).NavigationBar_addMultiItem_Men_Jackets(MenProduct_jacket)
                     .selectQuantity("2")
                     .selectSize(1)
                     .selectColour("Green")

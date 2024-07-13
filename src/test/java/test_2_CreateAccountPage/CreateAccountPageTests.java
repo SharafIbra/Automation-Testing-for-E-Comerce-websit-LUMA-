@@ -14,10 +14,6 @@ public class CreateAccountPageTests extends BaseTests {
                 .create_account()
                 .verifyPageURL()
                 .getUserTokenAndCookies();
-
-
-
-
     }
 
     @Test(description = "verify that there is already an account with this email address")

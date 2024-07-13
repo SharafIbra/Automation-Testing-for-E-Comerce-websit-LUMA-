@@ -62,11 +62,26 @@ public class P03_LoginPage extends UtilsDriverMethods {
     }
 
 
-    public P03_LoginPage BypassLogin() {
+    /*
+     *
+     * Use Cookies
+     *
+     * */
 
+    public void store_Cookies_Login_Page() {
+
+        Cookies.storeCookiesToFile(driver,"LoginCookies.txt");
+        System.out.println("Cookies stored: LoginCookies");
+
+    }
+
+    public P03_LoginPage load_Cookies_Login_Page() {
 
         Cookies.loadCookiesFromFile(driver,"LoginCookies.txt");
+        System.out.println("Cookies loaded: LoginCookies");
+
         refreshPage(driver);
+        //refreshPage(driver);
 
         return this;
     }
