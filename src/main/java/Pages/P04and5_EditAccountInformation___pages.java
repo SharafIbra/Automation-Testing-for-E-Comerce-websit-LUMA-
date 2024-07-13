@@ -2,10 +2,10 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilsFiles.Utils;
+import utilsFiles.UtilsDriverMethods;
 
 @SuppressWarnings("ALL")
-public class P04and5_EditAccountInformation___pages extends Utils {
+public class P04and5_EditAccountInformation___pages extends UtilsDriverMethods {
     WebDriver driver;
     private final By myacountdropdownbutton = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button");
     private final By myacount = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[1]");

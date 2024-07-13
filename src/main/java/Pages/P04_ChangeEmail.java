@@ -2,11 +2,11 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilsFiles.Utils;
+import utilsFiles.UtilsDriverMethods;
 
 import static org.testng.Assert.assertEquals;
 
-public class P04_ChangeEmail extends Utils {
+public class P04_ChangeEmail extends UtilsDriverMethods {
     WebDriver driver;
     private final By changeemail = new By.ById("change-email");
     private final By email = new By.ById("email");

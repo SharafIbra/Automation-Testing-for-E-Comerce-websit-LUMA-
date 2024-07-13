@@ -2,10 +2,10 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilsFiles.Utils;
+import utilsFiles.UtilsDriverMethods;
 
 @SuppressWarnings("ALL")
-public class P07_AddItemsToShoppingCart_Functions extends Utils {
+public class P07_AddItemsToShoppingCart_Functions extends UtilsDriverMethods {
     WebDriver driver;
 
     private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");

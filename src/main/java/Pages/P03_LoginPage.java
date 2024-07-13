@@ -4,12 +4,12 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utilsFiles.Cookies;
-import utilsFiles.Utils;
+import utilsFiles.UtilsDriverMethods;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class P03_LoginPage extends Utils {
+public class P03_LoginPage extends UtilsDriverMethods {
     WebDriver driver;
 
     private final By email = new By.ById("email");
