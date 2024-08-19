@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="LUMA Test Suite" >
-	<test name="test Create Account Successfully " >
+	<test name="test login By User Name and Password -- Save Cookies" >
 		<classes>
-			<class name="test_2_CreateAccountPage.CreateAccountPageTests" >
+			<class name="test_3_LoginPage.LoginPageTests" >
 			<methods>
 				<include name= "testLoginValidCredentials"/>
 			</methods>
 			</class>
 		</classes>
 	</test>
-	<test name="test login By Inject Cookies" >
+	<test name="test login InValid Credentials" >
 
 		<classes>
 			<class name="test_3_LoginPage.LoginPageTests" >
 			<methods>
-				<include name= "testLoginExistingUserByInjectCookies"/>
+				<include name= "testLoginInValidCredentials"/>
 			</methods>
 			</class>
 		</classes>

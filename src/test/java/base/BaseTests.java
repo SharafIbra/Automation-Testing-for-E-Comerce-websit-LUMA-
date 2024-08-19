@@ -1,8 +1,12 @@
 package base;
 
+import com.google.common.io.Files;
 import drivers.DriverFactory;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.*;
@@ -44,16 +48,58 @@ public class BaseTests extends testData {
         setDriver(driver);
         driver.get(PROJECT_URL);
         /*driver.get("https://magento.softwaretestingboard.com/");*/
+    }
 
 
 
 
-        /**/
 
-     /**/
+    @AfterMethod
+    public void takeScreenshot(ITestResult result) {
+    TakesScreenshot camera = (TakesScreenshot) driver;
+    File screenshot = camera.getScreenshotAs(OutputType.FILE);
+
+    // Define base screenshot directory
+    String baseScreenshotDirectory = "D:\\St\\Testing\\Projects\\1-LUMA\\ScreenShots\\";
+
+    // Determine the subdirectory based on the test result status
+    String subDirectory = result.isSuccess() ? "PassedTests\\" : "FailedTests\\";
+
+    // Construct the full path to the directory where the screenshot will be saved
+    String screenshotDirectory = baseScreenshotDirectory + subDirectory;
+    String screenshotName = result.getMethod().getMethodName() + "_" + System.currentTimeMillis() + ".png";
+    File destinationPath = new File(screenshotDirectory + screenshotName);
+
+    try {
+        // Ensure the directory exists
+        destinationPath.getParentFile().mkdirs();
+
+        // Move the screenshot file to the destination
+        Files.move(screenshot.toPath().toFile(), destinationPath.toPath().toFile());
+        System.out.println("Screenshot saved to: " + destinationPath.getAbsolutePath());
+    } catch (IOException e) {
+        System.err.println("Failed to save screenshot: " + e.getMessage());
+        throw new RuntimeException(e);
+    }
+}
 
 
 
+
+    @AfterMethod
+    public void recordFailure(ITestResult result){
+
+        if (ITestResult.FAILURE== result.getStatus()) {
+            var camera = (TakesScreenshot) driver;
+            File screenshot = camera.getScreenshotAs(OutputType.FILE);
+            //System.out.println("Screenshot taken: "+ screenshot.getAbsolutePath());
+            String path = "D:\\St\\Testing\\Projects\\1-LUMA\\ScreenShots\\FailedTestsRecord\\";
+            try {
+                Files.move(screenshot, new File(path+result.getName()));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @AfterTest

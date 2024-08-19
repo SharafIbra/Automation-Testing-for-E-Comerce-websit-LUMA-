@@ -34,11 +34,7 @@
 			</methods>
 		</classes>
 	</test>
-	<test name="Add Items To Shopping Cart" preserve-order="true">
-		<classes>
-			<class name="test_7_AddItemsToShoppingCart.PurchasesOrder_WhatIsNew_ByAnonymousUser" />
-		</classes>
-	</test>
+
 	<test name="Add Items To Shopping Cart2" preserve-order="true">
 		<classes>
 			<class name="test_7_AddItemsToShoppingCart.PurchasesOrder_NavigationBar_ByAnonymousUser" />

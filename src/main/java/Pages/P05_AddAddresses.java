@@ -81,7 +81,7 @@ public class P05_AddAddresses extends UtilsDriverMethods {
     }
 
     public P05_AddAddresses verifyAddressAdded() {
-        fluentWait(driver, status);
+        //fluentWait(driver, status);
 
 
         String expectedStatus = "https://magento.softwaretestingboard.com/customer/address/index/";

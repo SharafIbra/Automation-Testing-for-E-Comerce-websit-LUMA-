@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class purchasesOrderNavigationBarRegisteredUser extends BaseTests {
-    
+
 
     @Test(priority = 1)
     void test_AITSC_from_NavigationBar_RegisteredUser() {

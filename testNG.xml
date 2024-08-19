@@ -4,7 +4,7 @@
 
     <parameter name="browser" value="chrome" />
     <suite-files>
-        <!--<suite-file path="testNG_LoginScenarios.xml"/>-->
+        <!--<suite-file path="testNG_LoginScenarios__SaveCookies.xml"/>-->
         <suite-file path="testNG_CreateUser_And_SaveCookies.xml"/>
         <!-- <suite-file path="loginNegativeScenario.xml"/>  -->
     </suite-files>

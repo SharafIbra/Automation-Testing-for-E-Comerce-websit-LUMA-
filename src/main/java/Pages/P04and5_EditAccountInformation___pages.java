@@ -89,7 +89,7 @@ public class P04and5_EditAccountInformation___pages extends UtilsDriverMethods {
 
     public P04and5_EditAccountInformation___pages store_Cookies_MyAccount_Page() {
 
-        Cookies.storeCookiesToFile(driver,"MyAccountCookies");
+        Cookies.storeCookiesToFile(driver, "MyAccountCookies" ,"D:\\St\\Testing\\Projects\\1-LUMA\\CookiesDataFiles\\");
         System.out.println("Cookies stored: MyAccountCookies");
 
         return this;
@@ -97,7 +97,7 @@ public class P04and5_EditAccountInformation___pages extends UtilsDriverMethods {
 
     public P04and5_EditAccountInformation___pages load_Cookies_MyAccount_Page() {
 
-        Cookies.loadCookiesFromFile(driver,"MyAccountCookies");
+        Cookies.loadCookiesFromFile(driver,"MyAccountCookies","D:\\St\\Testing\\Projects\\1-LUMA\\CookiesDataFiles\\");
         System.out.println("Cookies loaded: MyAccountCookies");
 
         refreshPage(driver);

@@ -32,12 +32,20 @@ public class LoginPageTests extends BaseTests {
 
 
 
+    /*
+    * Methods for test cookies functionality
+    * */
+
+
+
+
     @Test(priority = 1, description = "Valid Login Scenario By inject Cookies file")
-    public void testLoginExistingUserByInjectCookies() {
+    public void testLoginExistingUserByInjectCookies_VerifyUserNameAndPassword() {
 
         new P03_LoginPage(driver)
                 .load_Cookies_Login_Page()
-                .verifySignINIs_Ok();
+                .verifySignIN__Successfully_validateUserName(firstname+" "+lastname);
+
 
     }
 
