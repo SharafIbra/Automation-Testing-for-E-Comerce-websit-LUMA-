@@ -3,9 +3,12 @@ package Pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilsFiles.UtilsDriverMethods;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import utilsFiles.UtilesHelper;
 
-public class P01_HomePage extends UtilsDriverMethods {
+public class P01_HomePage extends UtilesHelper {
+    private static final Logger log = LoggerFactory.getLogger( P01_HomePage.class );
     WebDriver driver;
     private final By createAccount = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
     private final By signIn = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a");
@@ -35,6 +38,7 @@ public class P01_HomePage extends UtilsDriverMethods {
 
     @Step("Bypass login ")
     public P01_HomePage bypassLoginHomepage() {
+        log.info( "ByPass Login By Inject cookies" );
         new P03_LoginPage(driver).load_Cookies_Login_Page();
         return new P01_HomePage(driver);
     }

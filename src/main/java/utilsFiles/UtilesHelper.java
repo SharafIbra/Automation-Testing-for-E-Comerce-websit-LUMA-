@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class UtilsDriverMethods {
+public class UtilesHelper {
 
 
     protected void sendKeys(WebDriver driver, By byObject, String data) {

@@ -22,10 +22,9 @@ public class purchasesOrderNavigationBarRegisteredUser extends BaseTests {
                 .selectQuantity("2")
                 .selectSize(1)
                 .selectColour("Green")
-                .submitProductToCart();
-        String actualStatus = new P07_AddItemsToShoppingCart_Functions(driver).verifyItemAddedToCart();
-        String expectedStatus = "You added " + MenProduct_jacket + " to your shopping cart.";
-        assertEquals(actualStatus, expectedStatus, "Item not added to shopping cart.");
+                .submitProductToCart()
+                .verifyItemAddedToCart(MenProduct_jacket);
+
 
 
     }
@@ -44,10 +43,8 @@ public class purchasesOrderNavigationBarRegisteredUser extends BaseTests {
                 .selectQuantity("2")
                 .selectSize(1)
                 .selectColour("Green")
-                .submitProductToCart();
-        String actualStatus1 = new P07_AddItemsToShoppingCart_Functions(driver).verifyItemAddedToCart();
-        String expectedStatus1 = "You added " + MenProduct_jacket + " to your shopping cart.";
-        assertEquals(actualStatus1, expectedStatus1, "Item not added to shopping cart.");
+                .submitProductToCart()
+                .verifyItemAddedToCart(MenProduct_jacket);
 
         /*add second product*/
         new P07_AddItemsToShoppingCart_Options(driver).clickWhatIsNew_NewInWomen_HoodiesSweatshirts_AddItem()
@@ -55,10 +52,8 @@ public class purchasesOrderNavigationBarRegisteredUser extends BaseTests {
                 .selectQuantity("2")
                 .selectSize(1)
                 .selectColour("Green")
-                .submitProductToCart();
-        String actualStatus = new P07_AddItemsToShoppingCart_Functions(driver).verifyItemAddedToCart();
-        String expectedStatus = "You added " + WomenProduct + " to your shopping cart.";
-        assertEquals(actualStatus, expectedStatus, "Item not added to shopping cart.");
+                .submitProductToCart()
+                .verifyItemAddedToCart(MenProduct_jacket);
 
 
 

@@ -10,12 +10,9 @@ import org.testng.annotations.Test;
 public class AddDefaultAddressesTests extends BaseTests {
     @Test(priority = 1)
     void testAddNewAddress_DefaultAddress_E2E() {
-        new P01_HomePage(driver).clickLoginPage();
-        new P03_LoginPage(driver)
-                .setLoginCredentials(email, password)
-                .signIn();
-
-        new P01_HomePage(driver).clickEditAccountPage();
+        new P01_HomePage(driver)
+                .bypassLoginHomepage()
+                .clickEditAccountPage();
 
         new P04and5_EditAccountInformation___pages(driver)
                 .store_Cookies_MyAccount_Page()
@@ -35,11 +32,11 @@ public class AddDefaultAddressesTests extends BaseTests {
 
     @Test(priority = 1)
     void testAddNewAddress_AnotherAddress_BypassLogin() {
-       /* new P01_HomePage(driver)
+        new P01_HomePage(driver)
                 .bypassLoginHomepage()
-                .clickEditAccountPage();*/
+                .clickEditAccountPage();
 
-        new P04and5_EditAccountInformation___pages(driver).load_Cookies_MyAccount_Page().clickAddNewAddress();
+        new P04and5_EditAccountInformation___pages(driver).clickAddNewAddress();
         new P05_AddAddresses(driver)
                 .setContactInformation(firstname, lastname, company, phone_number)
                 .setStreetAddress(address1, address2, address3)

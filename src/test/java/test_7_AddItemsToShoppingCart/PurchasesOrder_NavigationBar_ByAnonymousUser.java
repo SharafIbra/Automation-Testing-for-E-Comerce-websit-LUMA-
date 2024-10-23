@@ -23,11 +23,8 @@ public class PurchasesOrder_NavigationBar_ByAnonymousUser extends BaseTests {
                 .selectQuantity("2")
                 .selectSize(1)
                 .selectColour("Green")
-                .submitProductToCart();
-        String actualStatus = new P07_AddItemsToShoppingCart_Functions(driver).verifyItemAddedToCart();
-        String expectedStatus = "You added " + MenProduct_jacket + " to your shopping cart.";
-        assertEquals(actualStatus, expectedStatus, "Item not added to shopping cart.");
-
+                .submitProductToCart()
+                .verifyItemAddedToCart( MenProduct_jacket );
 
     }
 
@@ -40,10 +37,8 @@ public class PurchasesOrder_NavigationBar_ByAnonymousUser extends BaseTests {
                 .selectQuantity("2")
                 .selectSize(1)
                 .selectColour("Green")
-                .submitProductToCart();
-        String actualStatus = new P07_AddItemsToShoppingCart_Functions(driver).verifyItemAddedToCart();
-        String expectedStatus = "You added " + WomenProduct + " to your shopping cart.";
-        assertEquals(actualStatus, expectedStatus, "Item not added to shopping cart.");
+                .submitProductToCart()
+                .verifyItemAddedToCart(WomenProduct);
 
     }
 

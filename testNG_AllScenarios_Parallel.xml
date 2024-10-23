@@ -1,6 +1,5 @@
 <?xml-model href=""?>
-<suite name="LUMA Test Suite" >
-
+<suite name="LUMA Test Suite" parallel="tests" thread-count="10">
 
 	<test name="Validate Create New Account " preserve-order="true">
 		<classes>

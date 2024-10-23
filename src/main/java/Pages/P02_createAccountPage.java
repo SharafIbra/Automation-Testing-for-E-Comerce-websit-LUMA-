@@ -3,14 +3,14 @@ package Pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilsFiles.UtilsDriverMethods;
+import utilsFiles.UtilesHelper;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import static utilsFiles.Cookies.storeCookiesToFile;
 
 
-public class P02_createAccountPage extends UtilsDriverMethods {
+public class P02_createAccountPage extends UtilesHelper {
     WebDriver driver;
     private final By firstname = new By.ById("firstname");
     private final By lastname = new By.ById("lastname");

@@ -2,9 +2,9 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilsFiles.UtilsDriverMethods;
+import utilsFiles.UtilesHelper;
 
-public class P06_SearchProduct extends UtilsDriverMethods {
+public class P06_SearchProduct extends UtilesHelper {
     WebDriver driver;
     private final By searchtextfield = new By.ById("search");
     private final By searchButton = new By.ByXPath("//*[@id=\"search_mini_form\"]/div[2]/button");

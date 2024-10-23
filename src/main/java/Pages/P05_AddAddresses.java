@@ -3,11 +3,11 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import utilsFiles.UtilsDriverMethods;
+import utilsFiles.UtilesHelper;
 
 import static org.testng.Assert.assertEquals;
 
-public class P05_AddAddresses extends UtilsDriverMethods {
+public class P05_AddAddresses extends UtilesHelper {
     WebDriver driver;
 
 

@@ -3,10 +3,10 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utilsFiles.Cookies;
-import utilsFiles.UtilsDriverMethods;
+import utilsFiles.UtilesHelper;
 
 @SuppressWarnings("ALL")
-public class P04and5_EditAccountInformation___pages extends UtilsDriverMethods {
+public class P04and5_EditAccountInformation___pages extends UtilesHelper {
     WebDriver driver;
     private final By myacountdropdownbutton = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button");
     private final By myacount = new By.ByXPath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[1]");
@@ -95,15 +95,6 @@ public class P04and5_EditAccountInformation___pages extends UtilsDriverMethods {
         return this;
     }
 
-    public P04and5_EditAccountInformation___pages load_Cookies_MyAccount_Page() {
-
-        Cookies.loadCookiesFromFile(driver,"MyAccountCookies","D:\\St\\Testing\\Projects\\1-LUMA\\CookiesDataFiles\\");
-        System.out.println("Cookies loaded: MyAccountCookies");
-
-        refreshPage(driver);
-
-        return this;
-    }
 
 
 }

@@ -10,7 +10,7 @@
 			</class>
 		</classes>
 	</test>
-	<test name="test login InValid Credentials" >
+	<!--<test name="test login InValid Credentials" >
 
 		<classes>
 			<class name="test_3_LoginPage.LoginPageTests" >
@@ -19,7 +19,7 @@
 			</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
 
 </suite>
 <!--                                                                    -->

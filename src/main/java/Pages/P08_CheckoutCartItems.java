@@ -3,13 +3,13 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import utilsFiles.UtilsDriverMethods;
+import utilsFiles.UtilesHelper;
 
 import java.util.Objects;
 
 import static org.testng.Assert.assertTrue;
 
-public class P08_CheckoutCartItems extends UtilsDriverMethods {
+public class P08_CheckoutCartItems extends UtilesHelper {
     WebDriver driver;
     private final By cartbtn = new By.ByXPath("/html[1]/body[1]/div[2]/header[1]/div[2]/div[1]/a[1]");
     private final By cartbtn_ = new By.ByCssSelector(".action.showcart");

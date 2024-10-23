@@ -4,12 +4,12 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utilsFiles.Cookies;
-import utilsFiles.UtilsDriverMethods;
+import utilsFiles.UtilesHelper;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class P03_LoginPage extends UtilsDriverMethods {
+public class P03_LoginPage extends UtilesHelper {
     WebDriver driver;
 
     private final By email = new By.ById("email");
@@ -41,7 +41,7 @@ public class P03_LoginPage extends UtilsDriverMethods {
         return this;
     }
 
-
+    @Step("Verify Login successfully")
     public P03_LoginPage verifySignINIs_Ok() {
         fluentWait(driver, myacountdropdownbutton);
         click(driver, myacountdropdownbutton);
@@ -94,7 +94,7 @@ public class P03_LoginPage extends UtilsDriverMethods {
      * Use Cookies
      *
      * */
-
+    @Step("Save Cookies")
     public void store_Cookies_Login_Page() {
 
         Cookies.storeCookiesToFile(driver, "LoginCookies" ,"D:\\St\\Testing\\Projects\\1-LUMA\\CookiesDataFiles\\");;

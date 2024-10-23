@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTests {
 
-    @Test(priority = 1, description = "Valid Login Scenario with valid username and password and save session's cookies")
+    @Test(priority = 1,groups = { "login" }, description = "Valid Login Scenario with valid username and password and save session's cookies")
     public void testLoginValidCredentials() {
         new P01_HomePage(driver).clickLoginPage();
         new P03_LoginPage(driver)
@@ -41,6 +41,8 @@ public class LoginPageTests extends BaseTests {
 
     @Test(priority = 1, description = "Valid Login Scenario By inject Cookies file")
     public void testLoginExistingUserByInjectCookies_VerifyUserNameAndPassword() {
+
+
 
         new P03_LoginPage(driver)
                 .load_Cookies_Login_Page()

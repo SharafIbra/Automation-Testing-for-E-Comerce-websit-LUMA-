@@ -2,10 +2,12 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilsFiles.UtilsDriverMethods;
+import utilsFiles.UtilesHelper;
+
+import static org.testng.Assert.assertEquals;
 
 @SuppressWarnings("ALL")
-public class P07_AddItemsToShoppingCart_Functions extends UtilsDriverMethods {
+public class P07_AddItemsToShoppingCart_Functions extends UtilesHelper {
     WebDriver driver;
 
     private final By status = new By.ByXPath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div");
@@ -95,10 +97,12 @@ public class P07_AddItemsToShoppingCart_Functions extends UtilsDriverMethods {
         return this;
     }
 
-    public String verifyItemAddedToCart() {
+    public void verifyItemAddedToCart(String ProductName) {
         fluentWait(driver, status);
 
-        return getText(driver, status);
+        String actualStatus = getText(driver, status);
+        String expectedStatus = "You added " + ProductName + " to your shopping cart.";
+        assertEquals(actualStatus, expectedStatus, "Item not added to shopping cart.");
     }
 
 

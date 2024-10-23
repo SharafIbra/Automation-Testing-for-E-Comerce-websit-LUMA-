@@ -2,11 +2,11 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utilsFiles.UtilsDriverMethods;
+import utilsFiles.UtilesHelper;
 
 import static org.testng.Assert.assertEquals;
 
-public class P04_ResetPassword extends UtilsDriverMethods {
+public class P04_ResetPassword extends UtilesHelper {
     WebDriver driver;
 
     private final By email = new By.ById("email_address");
